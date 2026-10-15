@@ -1,0 +1,68 @@
+{
+ "S1": {
+  "verdicts": {
+   "KILL": 20
+  },
+  "frac_abs_z_gt3": 0.00390625,
+  "median_h_over_reps": 0.0006127172928959441,
+  "median_z": 0.038340175134178894
+ },
+ "S3": {
+  "verdicts": {
+   "KILL": 20
+  },
+  "frac_abs_z_gt3": 0.9328125,
+  "median_h_over_reps": -0.1682749245869596,
+  "median_z": -9.077572954493702
+ },
+ "S2": {
+  "0.1": {
+   "verdicts": {
+    "KILL": 20
+   },
+   "frac_abs_z_gt3": 0.0015625,
+   "median_h_over_reps": 0.004254070737163244,
+   "median_z": 0.23780790019572756
+  },
+  "0.2": {
+   "verdicts": {
+    "KILL": 20
+   },
+   "frac_abs_z_gt3": 0.04140625,
+   "median_h_over_reps": 0.016353437938493247,
+   "median_z": 1.0110284956123123
+  },
+  "0.4": {
+   "verdicts": {
+    "WEAK": 20
+   },
+   "frac_abs_z_gt3": 0.7125,
+   "median_h_over_reps": 0.07140866963997641,
+   "median_z": 3.84751342768916
+  },
+  "0.8": {
+   "verdicts": {
+    "PASS": 20
+   },
+   "frac_abs_z_gt3": 1.0,
+   "median_h_over_reps": 0.234090441360351,
+   "median_z": 13.26656487724582
+  },
+  "1.6": {
+   "verdicts": {
+    "PASS": 20
+   },
+   "frac_abs_z_gt3": 1.0,
+   "median_h_over_reps": 0.5148158326359564,
+   "median_z": 36.96288994725279
+  }
+ },
+ "requirements": {
+  "S1": true,
+  "S3": true,
+  "S2": true,
+  "S2_scale_used": 0.8,
+  "all": true
+ },
+ "runtime_s": 338
+}

@@ -1,0 +1,57 @@
+CITY=rb/g_lon_2604
+CITY=rb/g_seo_2604
+CITY=rb/g_mex_2604
+CITY=rb/g_bue_2604
+CITY=rb/g_ybk_2604 BIN_MIN=60
+CITY=rb/g_tpex_2604 BIN_MIN=60
+CITY=rb/g_baw_2509
+CITY=rb/g_baw_2509 BIN_MIN=60 SENS=_b60
+CITY=rb/g_bar_2509 BIN_MIN=60
+CITY=rb/r1a_tpe_r500_bike BIN_MIN=60
+CITY=rb/r1a_tpe_r500_rail BIN_MIN=60
+CITY=rb/r1a_tpe_r1000_bike BIN_MIN=60
+CITY=rb/r1a_tpe_r1000_rail BIN_MIN=60
+CITY=rb/r1a_tpe_r1500_bike BIN_MIN=60
+CITY=rb/r1a_tpe_r1500_rail BIN_MIN=60
+CITY=rb/r1a_bay_r500_bike BIN_MIN=60
+CITY=rb/r1a_bay_r500_rail BIN_MIN=60
+CITY=rb/r1a_bay_r1000_bike BIN_MIN=60
+CITY=rb/r1a_bay_r1000_rail BIN_MIN=60
+CITY=rb/r1a_bay_r1500_bike BIN_MIN=60
+CITY=rb/r1a_bay_r1500_rail BIN_MIN=60
+CITY=rb/r1b_citibike
+CITY=rb/r1b_divvy_mj BY_MONTH=1
+CITY=rb/r1b_bluebikes
+CITY=rb/r1b_g_lon
+CITY=rb/r1b_g_seo
+CITY=rb/r1b_g_mex
+CITY=rb/r1b_g_bue
+CITY=rb/r1b_g_baw
+CITY=rb/r1b_g_ybk BIN_MIN=60
+CITY=g_lon SENS=_rbA0
+CITY=g_lon SENS=_rbA2lam003 LAM=0.03
+CITY=g_lon SENS=_rbA2lam03 LAM=0.3
+CITY=g_lon SENS=_rbA3lamd03 LAM_D=0.3
+CITY=g_lon SENS=_rbA3lamd3 LAM_D=3.0
+CITY=g_lon SENS=_rbA1bin30 BIN_MIN=30
+CITY=g_lon SENS=_rbA5win T0_H=7 T1_H=21
+CITY=rb/g_lon_g30
+CITY=rb/g_lon_g120
+CITY=g_ybk SENS=_rbTlam003 BIN_MIN=60 LAM=0.03
+CITY=g_ybk SENS=_rbTlam03 BIN_MIN=60 LAM=0.3
+CITY=g_ybk SENS=_rbTlamd03 BIN_MIN=60 LAM_D=0.3
+CITY=g_ybk SENS=_rbTlamd3 BIN_MIN=60 LAM_D=3.0
+CITY=g_ybk SENS=_rbTwin BIN_MIN=60 T0_H=7 T1_H=21
+CITY=g_ybk SENS=_rbTbin120 BIN_MIN=120
+CITY=g_tpex SENS=_rbTlam003 BIN_MIN=60 LAM=0.03
+CITY=g_tpex SENS=_rbTlam03 BIN_MIN=60 LAM=0.3
+CITY=g_tpex SENS=_rbTlamd03 BIN_MIN=60 LAM_D=0.3
+CITY=g_tpex SENS=_rbTlamd3 BIN_MIN=60 LAM_D=3.0
+CITY=g_tpex SENS=_rbTwin BIN_MIN=60 T0_H=7 T1_H=21
+CITY=g_tpex SENS=_rbTbin120 BIN_MIN=120
+CITY=g_x04 BIN_MIN=60
+CITY=g_n04 BIN_MIN=60
+CITY=g_x10 BIN_MIN=60
+CITY=g_n10 BIN_MIN=60
+CITY=g_x12 BIN_MIN=60
+CITY=g_n12 BIN_MIN=60

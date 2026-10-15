@@ -1,0 +1,11 @@
+{
+ "classes": {
+  "DURABLE": 20
+ },
+ "n_durable": 20,
+ "requirement_met": true,
+ "sd_F_cbd": 0.30419011435788923,
+ "injected_sd": 0.09619336030780178,
+ "B_boot": 200,
+ "runtime_s": 857
+}

@@ -1,0 +1,13 @@
+# Versions used for the published analysis (Python 3.11 on a Slurm cluster; figures with matplotlib 3.7).
+name: tides-circulation
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - numpy=1.23.5
+  - scipy=1.10.1
+  - pandas=1.5.3
+  - matplotlib=3.7.0
+  - pyarrow=14.0.2
+  - pyogrio=0.13.0
+  - python-duckdb=1.5.6
+  - pytest

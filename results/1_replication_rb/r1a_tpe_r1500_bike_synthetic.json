@@ -1,0 +1,75 @@
+{
+ "S1": {
+  "verdicts": {
+   "HETEROGENEITY": 20
+  },
+  "frac_abs_z_gt3": 0.003125,
+  "median_z": -0.00985780394743663,
+  "median_h": -0.00012358814341962846,
+  "median_h_big": -0.0006510579309048066,
+  "failing_criteria": {
+   "n_z_ge5": 20,
+   "median_h": 20,
+   "median_h_big": 20,
+   "split": 20,
+   "split_big": 20
+  }
+ },
+ "S2": {
+  "0.4": {
+   "verdicts": {
+    "GO": 20
+   },
+   "frac_abs_z_gt3": 1.0,
+   "median_z": 64.9199205251107,
+   "median_h": 0.3960086914191261,
+   "median_h_big": 0.4071695221421892,
+   "failing_criteria": {
+    "n_z_ge5": 20,
+    "median_h": 0,
+    "median_h_big": 0,
+    "split": 0,
+    "split_big": 0
+   }
+  },
+  "0.8": {
+   "verdicts": {
+    "GO": 20
+   },
+   "frac_abs_z_gt3": 1.0,
+   "median_z": 228.78878468370627,
+   "median_h": 0.6104883323832104,
+   "median_h_big": 0.6151446709790488,
+   "failing_criteria": {
+    "n_z_ge5": 20,
+    "median_h": 0,
+    "median_h_big": 0,
+    "split": 0,
+    "split_big": 0
+   }
+  },
+  "1.6": {
+   "verdicts": {
+    "GO": 20
+   },
+   "frac_abs_z_gt3": 1.0,
+   "median_z": 648.6851658511034,
+   "median_h": 0.7128365612395383,
+   "median_h_big": 0.7109284120296981,
+   "failing_criteria": {
+    "n_z_ge5": 20,
+    "median_h": 0,
+    "median_h_big": 0,
+    "split": 0,
+    "split_big": 0
+   }
+  }
+ },
+ "requirements": {
+  "S1": true,
+  "S2": true,
+  "S2_scale_used": "0.4",
+  "all": true
+ },
+ "runtime_s": 7
+}

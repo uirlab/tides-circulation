@@ -1,0 +1,14 @@
+{
+ "n_months": 31,
+ "frac_pos_classic": 0.7419354838709677,
+ "frac_pos_ebike": 1.0,
+ "median_d_classic": 0.09165389691842984,
+ "median_d_ebike": 0.10823372293924699,
+ "small_classic_casual_months": [
+  "2025-01",
+  "2025-12",
+  "2026-01",
+  "2026-02"
+ ],
+ "verdict": "INCONCLUSIVE"
+}

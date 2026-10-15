@@ -1,0 +1,32 @@
+{
+ "city": "u_bos_jo25",
+ "osm": "bluebikes",
+ "confirmatory": true,
+ "n_one_way_pairs": 34,
+ "matches": 27,
+ "f": 0.7941176470588235,
+ "p_one_sided": 0.0004106976557523012,
+ "ci95": [
+  0.6210222514603165,
+  0.9129786945415447
+ ],
+ "power_at_0_6": 0.43,
+ "verdict": "SUPPORTED",
+ "underpowered": true,
+ "two_way_control": {
+  "n": 51,
+  "f_fixed_orientation": 0.5882352941176471,
+  "flag": false
+ },
+ "streets_top": [
+  "berkeley st",
+  "boylston st",
+  "cross st",
+  "dartmouth st",
+  "marion st",
+  "newbury st",
+  "pearl st",
+  "stuart st",
+  "tremont st"
+ ]
+}

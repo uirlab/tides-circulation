@@ -1,0 +1,59 @@
+{
+ "note": "Exploratory: deviance per trip at 60-min bins, from per-bin G2 sums (tide = G2_S - G2_QS; circulation = G2_QS - null mean).",
+ "rows": [
+  {
+   "system": "YouBike",
+   "city": "Taipei",
+   "mode": "bike",
+   "trips": 4744029,
+   "tide_per_trip": 0.15352155660781874,
+   "circ_per_trip": 0.172189162196728,
+   "share": 0.5286567259091516
+  },
+  {
+   "system": "Taipei MRT",
+   "city": "Taipei",
+   "mode": "rail",
+   "trips": 39744754,
+   "tide_per_trip": 0.25707415618035107,
+   "circ_per_trip": 0.020693724728400986,
+   "share": 0.07450006336477386
+  },
+  {
+   "system": "Bay Wheels",
+   "city": "SF Bay",
+   "mode": "bike",
+   "trips": 226920,
+   "tide_per_trip": 0.37088705496279567,
+   "circ_per_trip": 0.12717416607896895,
+   "share": 0.2553384216762879
+  },
+  {
+   "system": "BART",
+   "city": "SF Bay",
+   "mode": "rail",
+   "trips": 3565055,
+   "tide_per_trip": 0.3566225960984067,
+   "circ_per_trip": 0.0324804443101651,
+   "share": 0.08347517479189959
+  },
+  {
+   "system": "Citi Bike",
+   "city": "New York",
+   "mode": "bike",
+   "trips": 2897037,
+   "tide_per_trip": 0.2099362121271147,
+   "circ_per_trip": 0.14038815137939167,
+   "share": 0.4007376192001112
+  },
+  {
+   "system": "Ttareungyi",
+   "city": "Seoul",
+   "mode": "bike",
+   "trips": 1842500,
+   "tide_per_trip": 0.27381410094784203,
+   "circ_per_trip": 0.19499807870295802,
+   "share": 0.415940726728142
+  }
+ ]
+}

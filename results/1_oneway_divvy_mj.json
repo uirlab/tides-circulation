@@ -1,0 +1,38 @@
+{
+ "city": "divvy_mj",
+ "osm": "divvy",
+ "confirmatory": true,
+ "n_one_way_pairs": 46,
+ "matches": 31,
+ "f": 0.6739130434782609,
+ "p_one_sided": 0.012948040896617385,
+ "ci95": [
+  0.5198279593624651,
+  0.8046745633261058
+ ],
+ "power_at_0_6": 0.127,
+ "verdict": "INCONCLUSIVE",
+ "underpowered": true,
+ "two_way_control": {
+  "n": 236,
+  "f_fixed_orientation": 0.4279661016949153,
+  "flag": false
+ },
+ "streets_top": [
+  "adams st",
+  "clark st",
+  "clinton st",
+  "dearborn st",
+  "desplaines st",
+  "erie st",
+  "franklin st",
+  "grand ave",
+  "illinois st",
+  "jackson blvd",
+  "randolph st",
+  "roscoe st",
+  "washington blvd",
+  "washington st",
+  "wells st"
+ ]
+}

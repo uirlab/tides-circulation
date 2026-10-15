@@ -1,0 +1,15 @@
+{
+ "city": "u_chi_jo25",
+ "strata": null,
+ "n_pairs": 8195,
+ "power": {
+  "planted_supported": 1.0,
+  "unplanted_false_supported": 0.0,
+  "pass": true
+ },
+ "beta_R": 0.27929626685051523,
+ "p_perm": 0.0004997501249375312,
+ "enrichment_top_decile": 3.411810802154154,
+ "verdict": "SUPPORTED",
+ "excess_share_top_decile": 0.3438872144697171
+}

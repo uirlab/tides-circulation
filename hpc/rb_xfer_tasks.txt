@@ -1,0 +1,9 @@
+XPAIRS=data/processed/xfer_pairs_rb_0304.npz UNIT=g_x04
+XPAIRS=data/processed/xfer_pairs_rb_0304.npz UNIT=g_n04
+XPAIRS=data/processed/xfer_pairs_rb_0910.npz UNIT=g_x10
+XPAIRS=data/processed/xfer_pairs_rb_0910.npz UNIT=g_n10
+XPAIRS=data/processed/xfer_pairs_rb_1112.npz UNIT=g_x12
+XPAIRS=data/processed/xfer_pairs_rb_1112.npz UNIT=g_n12
+XPAIRS=data/processed/xfer_pairs_rb_0506_min20.npz UNIT=g_xj6 OUTTAG=_min20
+XPAIRS=data/processed/xfer_pairs_rb_0506_min50.npz UNIT=g_xj6 OUTTAG=_min50
+XPAIRS=data/processed/xfer_pairs.npz UNIT=g_xj6 TOPQ=0.8 OUTTAG=_topquintile

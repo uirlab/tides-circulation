@@ -1,0 +1,24 @@
+{
+ "S1": {
+  "verdicts": {
+   "HETEROGENEITY": 20
+  },
+  "frac_abs_z_gt3": 0.00390625,
+  "median_z": 0.015264114684073286,
+  "heterogeneity_artifact_unstratified_median_h": 0.10314876827418638
+ },
+ "S2": {
+  "verdicts": {
+   "PARTIAL": 17,
+   "GO": 3
+  },
+  "frac_abs_z_gt3": 0.9921875,
+  "median_z": 9.073896795595765
+ },
+ "requirements": {
+  "S1": true,
+  "S2": false,
+  "all": false
+ },
+ "runtime_s": 23
+}

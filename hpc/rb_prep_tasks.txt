@@ -1,0 +1,30 @@
+python src/prep_rb.py lon 2026-04 g_lon_2604
+python src/prep_rb.py seo 2026-04 g_seo_2604
+python src/prep_rb.py mex 2026-04 g_mex_2604
+python src/prep_rb.py bue 2026-04 g_bue_2604
+python src/prep_rb.py ybk 2026-04 g_ybk_2604
+python src/prep_rb.py tpe 2026-04 g_tpex_2604
+python src/prep_rb.py baw 2025-09 g_baw_2509
+python src/prep_rb.py bar 2025-09 g_bar_2509
+python src/prep_rb.py lon 2026-05 g_lon_g30 30
+python src/prep_rb.py lon 2026-05 g_lon_g120 120
+python src/rb_spatial.py catch tpe 500
+python src/rb_spatial.py catch tpe 1000
+python src/rb_spatial.py catch tpe 1500
+python src/rb_spatial.py catch bay 500
+python src/rb_spatial.py catch bay 1000
+python src/rb_spatial.py catch bay 1500
+python src/rb_spatial.py hex citibike
+python src/rb_spatial.py hex divvy_mj
+python src/rb_spatial.py hex bluebikes
+python src/rb_spatial.py hex g_lon
+python src/rb_spatial.py hex g_seo
+python src/rb_spatial.py hex g_mex
+python src/rb_spatial.py hex g_bue
+python src/rb_spatial.py hex g_baw
+python src/rb_spatial.py hex g_ybk
+python src/prep_xfer_rb.py 3 4
+python src/prep_xfer_rb.py 9 10
+python src/prep_xfer_rb.py 11 12
+python src/prep_xfer_rb.py 5 6 20 pairs_only
+python src/prep_xfer_rb.py 5 6 50 pairs_only

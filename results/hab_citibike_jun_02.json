@@ -1,0 +1,18 @@
+{
+ "city": "citibike_jun",
+ "strata": [
+  0,
+  2
+ ],
+ "n_pairs": 19478,
+ "power": {
+  "planted_supported": 1.0,
+  "unplanted_false_supported": 0.01,
+  "pass": true
+ },
+ "beta_R": 0.1515201819567382,
+ "p_perm": 0.0004997501249375312,
+ "enrichment_top_decile": 2.959383466611758,
+ "verdict": "SUPPORTED",
+ "excess_share_top_decile": 0.3046290096804895
+}

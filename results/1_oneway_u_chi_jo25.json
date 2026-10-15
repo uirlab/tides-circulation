@@ -1,0 +1,42 @@
+{
+ "city": "u_chi_jo25",
+ "osm": "divvy",
+ "confirmatory": true,
+ "n_one_way_pairs": 90,
+ "matches": 70,
+ "f": 0.7777777777777778,
+ "p_one_sided": 5.6817825421190045e-08,
+ "ci95": [
+  0.6778731876731099,
+  0.8586631015341334
+ ],
+ "power_at_0_6": 0.942,
+ "verdict": "SUPPORTED",
+ "underpowered": false,
+ "two_way_control": {
+  "n": 462,
+  "f_fixed_orientation": 0.49783549783549785,
+  "flag": false
+ },
+ "streets_top": [
+  "adams st",
+  "canal st",
+  "clark st",
+  "clinton st",
+  "dearborn st",
+  "desplaines st",
+  "emerald ave",
+  "erie st",
+  "franklin st",
+  "grand ave",
+  "huron st",
+  "illinois st",
+  "jackson blvd",
+  "randolph st",
+  "roscoe st",
+  "rush st",
+  "washington blvd",
+  "washington st",
+  "wells st"
+ ]
+}

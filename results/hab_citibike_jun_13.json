@@ -1,0 +1,14 @@
+{
+ "city": "citibike_jun",
+ "strata": [
+  1,
+  3
+ ],
+ "n_pairs": 544,
+ "power": {
+  "planted_supported": 0.55,
+  "unplanted_false_supported": 0.0,
+  "pass": false
+ },
+ "note": "power check failed; real statistic not computed"
+}

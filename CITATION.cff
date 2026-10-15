@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this code or the derived results, please cite the article and this repository."
+title: "Tides and circulation in urban mobility: code and derived results"
+authors:
+  - family-names: Liu
+    given-names: Yang
+  - family-names: Wang
+    given-names: Qi R.
+    affiliation: "Department of Civil and Environmental Engineering, Northeastern University"
+    email: q.wang@northeastern.edu
+  - family-names: Qu
+    given-names: Xiaobo
+license: MIT
+version: 1.0.0
+date-released: 2026-10-14
+# doi: to be added when archived on Zenodo

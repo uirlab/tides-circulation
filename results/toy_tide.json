@@ -1,0 +1,81 @@
+{
+ "case1_tide_only_changes": {
+  "morning": {
+   "cycle_affinity": 0.0,
+   "net_flow": [
+    20.0,
+    0.0,
+    -8.0
+   ],
+   "hodge_curl_share": 0.10344827586206898
+  },
+  "midday": {
+   "cycle_affinity": 0.0,
+   "net_flow": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "hodge_curl_share": 0.0
+  },
+  "evening": {
+   "cycle_affinity": 0.0,
+   "net_flow": [
+    0.0,
+    -12.0,
+    8.0
+   ],
+   "hodge_curl_share": 0.025641025641025644
+  },
+  "day_total": {
+   "cycle_affinity": 0.0,
+   "net_flow": [
+    20.0,
+    -12.0,
+    0.0
+   ],
+   "hodge_curl_share": 0.039215686274509824,
+   "odds_ratio": 1.0
+  }
+ },
+ "case2_tide_and_busy_pairs_change": {
+  "morning": {
+   "cycle_affinity": 0.0,
+   "net_flow": [
+    32.0,
+    0.0,
+    -4.0
+   ],
+   "hodge_curl_share": 0.25128205128205133
+  },
+  "midday": {
+   "cycle_affinity": 0.0,
+   "net_flow": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "hodge_curl_share": 0.0
+  },
+  "evening": {
+   "cycle_affinity": 0.0,
+   "net_flow": [
+    0.0,
+    -32.0,
+    4.0
+   ],
+   "hodge_curl_share": 0.2512820512820513
+  },
+  "day_total": {
+   "cycle_affinity": -0.08059740877951221,
+   "net_flow": [
+    32.0,
+    -32.0,
+    0.0
+   ],
+   "hodge_curl_share": 1.4791141972893971e-31,
+   "odds_ratio": 0.9225650332728372
+  }
+ },
+ "control_uniform_gamma_morning_curl_share": 8.833598678256122e-32
+}

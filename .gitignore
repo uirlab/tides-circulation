@@ -1,0 +1,15 @@
+# Raw and processed trip data are never committed (operator licences; see data/README.md)
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/naturalearth/
+!data/raw/tlc/
+data/raw/tlc/*
+!data/raw/tlc/zones/
+!data/raw/tlc/taxi_zone_lookup.csv
+data/processed/*
+!data/processed/.gitkeep
+logs/
+__pycache__/
+*.pyc
+*.part
+.DS_Store

@@ -1,0 +1,25 @@
+{
+ "city": "bluebikes",
+ "osm": "bluebikes",
+ "confirmatory": true,
+ "n_one_way_pairs": 8,
+ "matches": 6,
+ "f": 0.75,
+ "p_one_sided": 0.14453125,
+ "ci95": [
+  0.3491442055871758,
+  0.9681459737500557
+ ],
+ "power_at_0_6": 0.012,
+ "verdict": "INCONCLUSIVE (n < 30)",
+ "underpowered": true,
+ "two_way_control": {
+  "n": 15,
+  "f_fixed_orientation": 0.5333333333333333,
+  "flag": false
+ },
+ "streets_top": [
+  "boylston st",
+  "newbury st"
+ ]
+}

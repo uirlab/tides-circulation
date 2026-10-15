@@ -1,0 +1,16 @@
+{
+ "city": "citibike",
+ "cells": 415719,
+ "abs_residual_trips": {
+  "median": 0.09641398973018542,
+  "p95": 0.27655525719362106,
+  "p99": 0.358730637276722,
+  "max": 0.7118272471661946
+ },
+ "share_cells_above_1_trip": 0.0,
+ "residual_over_station_trips": {
+  "median": 0.01652833821257663,
+  "p95": 0.16755080810043124
+ },
+ "sum_abs_residual_over_sum_abs_net_imbalance": 0.028386141445651072
+}

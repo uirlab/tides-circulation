@@ -1,0 +1,25 @@
+SENS=_A1bin30 BIN_MIN=30 CITY=u_nyc_2025-05 PY=irrev_strat.py ARGS=all
+SENS=_A2lam003 LAM=0.03 CITY=u_nyc_2025-05 PY=irrev_strat.py ARGS=all
+SENS=_A2lam03 LAM=0.3 CITY=u_nyc_2025-05 PY=irrev_strat.py ARGS=all
+SENS=_A3lamd03 LAM_D=0.3 CITY=u_nyc_2025-05 PY=irrev_strat.py ARGS=all
+SENS=_A3lamd3 LAM_D=3.0 CITY=u_nyc_2025-05 PY=irrev_strat.py ARGS=all
+SENS= GROUP_S=30 CITY=u_nyc_2025-05g30 PREP=u_nyc_2025-05g30 PY=irrev_strat.py ARGS=all
+SENS= GROUP_S=120 CITY=u_nyc_2025-05g120 PREP=u_nyc_2025-05g120 PY=irrev_strat.py ARGS=all
+SENS=_A5win0721 T0_H=7 T1_H=21 CITY=u_nyc_2025-05 PY=irrev_strat.py ARGS=all
+SENS=_A0baseline CITY=u_nyc_2025-05 PY=irrev_strat.py ARGS=all
+SENS=_B1near30 NEAR_M=30 CITY=citibike_jun OSM=citibike PY=oneway.py ARGS=
+SENS=_B1near75 NEAR_M=75 CITY=citibike_jun OSM=citibike PY=oneway.py ARGS=
+SENS=_B2ang30 MAX_ANG=30 CITY=citibike_jun OSM=citibike PY=oneway.py ARGS=
+SENS=_B2ang60 MAX_ANG=60 CITY=citibike_jun OSM=citibike PY=oneway.py ARGS=
+SENS=_B3min20 MIN_T=20 CITY=citibike_jun OSM=citibike PY=oneway.py ARGS=
+SENS=_B3min50 MIN_T=50 CITY=citibike_jun OSM=citibike PY=oneway.py ARGS=
+SENS=_C1slot15 SLOT_MIN=15 PY=hab.py ARGS="citibike_jun citibike all"
+SENS=_C1slot60 SLOT_MIN=60 PY=hab.py ARGS="citibike_jun citibike all"
+SENS=_C2min20 MIN_T=20 PY=hab.py ARGS="citibike_jun citibike all"
+SENS=_C2min50 MIN_T=50 PY=hab.py ARGS="citibike_jun citibike all"
+SENS=_D1u2 U_THR=2 PY=rebalancing.py ARGS=
+SENS=_D1u5 U_THR=5 PY=rebalancing.py ARGS=
+SENS=_D2gap5 GAP_S=300 PY=rebalancing.py ARGS=
+SENS=_D2gap15 GAP_S=900 PY=rebalancing.py ARGS=
+SENS=_E1r250 RADIUS=250 M1_ONLY=1 PY=modesub.py ARGS=
+SENS=_E1r600 RADIUS=600 M1_ONLY=1 PY=modesub.py ARGS=

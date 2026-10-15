@@ -1,0 +1,14 @@
+{
+ "n_may": 20831,
+ "n_jun": 24223,
+ "delta_jun": 13547.31996203745,
+ "E_tot_jun": 35685.4401673131,
+ "sdG": 0.32747631071489697,
+ "synthetic": {
+  "power": 0.0,
+  "false_pos": 0.0,
+  "median_dES_planted": 0.014399525937722202,
+  "pass_": false
+ },
+ "note": "synthetic gate failed; real statistic not computed (amend spec first)"
+}

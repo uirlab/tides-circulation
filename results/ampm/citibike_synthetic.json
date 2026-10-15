@@ -1,0 +1,909 @@
+{
+ "city": "citibike",
+ "bin_min": 15.0,
+ "n_pairs": 7109,
+ "periods": {
+  "AM": [
+   420,
+   600
+  ],
+  "PM": [
+   960,
+   1140
+  ],
+  "MID": [
+   660,
+   840
+  ]
+ },
+ "min_trips": 30,
+ "replicates": [
+  {
+   "scenario": "null",
+   "rep": 0,
+   "r_star": 0.28452911880591963,
+   "ci95": [
+    -0.5124234926048286,
+    1.7454541857632715
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 1,
+   "r_star": NaN,
+   "ci95": [
+    -2.8992666609573647,
+    0.6543744915308869
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 2,
+   "r_star": -0.7729055016139492,
+   "ci95": [
+    -4.109034073637603,
+    -0.15410709815781048
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 3,
+   "r_star": -0.4419027729532518,
+   "ci95": [
+    -4.780650989762931,
+    0.44918426684997964
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 4,
+   "r_star": 1.173615549738778,
+   "ci95": [
+    -0.22223249889084018,
+    4.49900956925224
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 5,
+   "r_star": 0.005977833191989278,
+   "ci95": [
+    -0.6568840256832149,
+    1.1497829313502914
+   ],
+   "signal": true,
+   "verdict": "MIXED"
+  },
+  {
+   "scenario": "null",
+   "rep": 6,
+   "r_star": -0.25256291674009745,
+   "ci95": [
+    -1.4187216876621787,
+    0.5445387120243642
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 7,
+   "r_star": -3.785164842510105,
+   "ci95": [
+    -4.767972693180357,
+    0.6338662766674176
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 8,
+   "r_star": -1.3801890307690836,
+   "ci95": [
+    -6.658143666526465,
+    -0.24416612946291713
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 9,
+   "r_star": NaN,
+   "ci95": [
+    -9.364570045581033,
+    0.47188042989580997
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 10,
+   "r_star": -0.19103877525844698,
+   "ci95": [
+    -1.8735791849163395,
+    1.1983476115570655
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 11,
+   "r_star": -0.6751305494546057,
+   "ci95": [
+    -4.280130346840164,
+    0.9917540219873743
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 12,
+   "r_star": NaN,
+   "ci95": [
+    -2.1239788289408077,
+    1.650409025707957
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 13,
+   "r_star": 0.18857075141879676,
+   "ci95": [
+    -0.575779226103018,
+    1.1132963413452417
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 14,
+   "r_star": -0.39387189330183636,
+   "ci95": [
+    -1.4129902888351586,
+    0.350766071585683
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 15,
+   "r_star": -1.681095286307364,
+   "ci95": [
+    -7.121277703310662,
+    0.0891990389215926
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 16,
+   "r_star": -0.47296507641075486,
+   "ci95": [
+    -2.8981892946814853,
+    1.559095923693898
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 17,
+   "r_star": -1.0200159657553685,
+   "ci95": [
+    -3.246700417060483,
+    -0.25789650896611754
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 18,
+   "r_star": NaN,
+   "ci95": [
+    -2.468477070948021,
+    0.4041808908501345
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "null",
+   "rep": 19,
+   "r_star": NaN,
+   "ci95": [
+    -9.884559785773845,
+    0.692463277515599
+   ],
+   "signal": false,
+   "verdict": "NO SIGNAL"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 0,
+   "r_star": -0.8587698007075867,
+   "ci95": [
+    -0.9938335064232962,
+    -0.7673457541744978
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 1,
+   "r_star": -0.8097092291645112,
+   "ci95": [
+    -0.9323558892434212,
+    -0.7009600183592157
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 2,
+   "r_star": -0.7889633056079697,
+   "ci95": [
+    -0.9220576590895143,
+    -0.6759358063104737
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 3,
+   "r_star": -0.9673660678054978,
+   "ci95": [
+    -1.1305450564291815,
+    -0.8233643970699117
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 4,
+   "r_star": -1.0057898895532504,
+   "ci95": [
+    -1.1956410397388797,
+    -0.8559826009020691
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 5,
+   "r_star": -0.839979878640098,
+   "ci95": [
+    -0.9716786889518921,
+    -0.7383189083824215
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 6,
+   "r_star": -0.8958584373889317,
+   "ci95": [
+    -1.054355333872919,
+    -0.7544517181186994
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 7,
+   "r_star": -0.7602255128909662,
+   "ci95": [
+    -0.8746992347679577,
+    -0.6490290750224433
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 8,
+   "r_star": -0.8943760695040849,
+   "ci95": [
+    -1.0103796969539123,
+    -0.7914050461672978
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 9,
+   "r_star": -0.88558783246751,
+   "ci95": [
+    -0.9973017890792972,
+    -0.785503676863756
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 10,
+   "r_star": -1.123567229387195,
+   "ci95": [
+    -1.3056894521543396,
+    -0.9488568525217347
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 11,
+   "r_star": -0.9416071342000341,
+   "ci95": [
+    -1.0685626057125772,
+    -0.8313164816452084
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 12,
+   "r_star": -0.9838427094069261,
+   "ci95": [
+    -1.1409613472177988,
+    -0.8724895412292714
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 13,
+   "r_star": -0.9129779042872571,
+   "ci95": [
+    -1.0471362394886539,
+    -0.7950164840011317
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 14,
+   "r_star": -0.6930489022585938,
+   "ci95": [
+    -0.8189297833660241,
+    -0.5721636256318827
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 15,
+   "r_star": -0.8736584768524129,
+   "ci95": [
+    -1.0129385035705267,
+    -0.7535218984702877
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 16,
+   "r_star": -0.9616434236702815,
+   "ci95": [
+    -1.1116632944887976,
+    -0.8316403053699977
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 17,
+   "r_star": -0.9341070540297756,
+   "ci95": [
+    -1.0985077395207647,
+    -0.8167288655684549
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 18,
+   "r_star": -0.833780191740048,
+   "ci95": [
+    -0.959104443333872,
+    -0.73512042788194
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "mirror",
+   "rep": 19,
+   "r_star": -0.9448910164219656,
+   "ci95": [
+    -1.0948905371948834,
+    -0.813606290245064
+   ],
+   "signal": true,
+   "verdict": "MIRRORED"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 0,
+   "r_star": -0.07146192675476261,
+   "ci95": [
+    -0.2224013234883687,
+    0.08017558211782945
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 1,
+   "r_star": -0.015177852830859099,
+   "ci95": [
+    -0.190712326283968,
+    0.1559161943623017
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 2,
+   "r_star": -0.0764392450727511,
+   "ci95": [
+    -0.23624347501098827,
+    0.07366153101806111
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 3,
+   "r_star": 0.016573222739017276,
+   "ci95": [
+    -0.16501869810706932,
+    0.1976563863349254
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 4,
+   "r_star": 0.045724676086829195,
+   "ci95": [
+    -0.15396265532259662,
+    0.2445725701292934
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 5,
+   "r_star": 0.03056064144052785,
+   "ci95": [
+    -0.11082247389869637,
+    0.18340144656809992
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 6,
+   "r_star": 0.1067816994080718,
+   "ci95": [
+    -0.09380958508350304,
+    0.28662468437096045
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 7,
+   "r_star": 0.04212808294078982,
+   "ci95": [
+    -0.11197752392860945,
+    0.19151791929901982
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 8,
+   "r_star": -0.09004718453876676,
+   "ci95": [
+    -0.2682586237754768,
+    0.11115428912846652
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 9,
+   "r_star": -0.10666557530421598,
+   "ci95": [
+    -0.2599671775731132,
+    0.03921944321271589
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 10,
+   "r_star": -0.10119884605338698,
+   "ci95": [
+    -0.31989517393834843,
+    0.10171353707033175
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 11,
+   "r_star": -0.0648890348518755,
+   "ci95": [
+    -0.2515724886539674,
+    0.09474896627483892
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 12,
+   "r_star": -0.09759309016293487,
+   "ci95": [
+    -0.33578606679494527,
+    0.1095236063785619
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 13,
+   "r_star": 0.06545395771574979,
+   "ci95": [
+    -0.1355201360691597,
+    0.24601293187528744
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 14,
+   "r_star": 0.11678980280061543,
+   "ci95": [
+    -0.04678288339252751,
+    0.28102220724182375
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 15,
+   "r_star": -0.0022468257327781633,
+   "ci95": [
+    -0.1790110530474992,
+    0.16943031214153384
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 16,
+   "r_star": -0.08652198528001909,
+   "ci95": [
+    -0.27613244004933474,
+    0.05827570192837019
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 17,
+   "r_star": -0.01949386157582302,
+   "ci95": [
+    -0.20729007628316,
+    0.14150190474917762
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 18,
+   "r_star": -0.027476333638815662,
+   "ci95": [
+    -0.193069294894724,
+    0.11963970099400678
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "oneway",
+   "rep": 19,
+   "r_star": 0.027501287421537523,
+   "ci95": [
+    -0.16965231256494678,
+    0.208599316040601
+   ],
+   "signal": true,
+   "verdict": "ONE-WAY"
+  },
+  {
+   "scenario": "static",
+   "rep": 0,
+   "r_star": 0.753991429331307,
+   "ci95": [
+    0.6497613928948052,
+    0.8635031142614379
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 1,
+   "r_star": 0.8825447829361138,
+   "ci95": [
+    0.778132871018673,
+    1.0219216986537496
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 2,
+   "r_star": 0.7655588028503759,
+   "ci95": [
+    0.6403244513744966,
+    0.9080417753191701
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 3,
+   "r_star": 0.9541124850767809,
+   "ci95": [
+    0.8235645285441852,
+    1.101806434133159
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 4,
+   "r_star": 1.0308753980141239,
+   "ci95": [
+    0.8724343764898987,
+    1.2330899237923965
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 5,
+   "r_star": 0.8837361012196001,
+   "ci95": [
+    0.7608051239680096,
+    1.0093792336753993
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 6,
+   "r_star": 1.0121422456001903,
+   "ci95": [
+    0.8746723262378637,
+    1.142690414430007
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 7,
+   "r_star": 0.868177899954851,
+   "ci95": [
+    0.752880306321761,
+    0.9996192462952362
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 8,
+   "r_star": 0.8044436535355208,
+   "ci95": [
+    0.6753791581162615,
+    0.9449987591344192
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 9,
+   "r_star": 0.810099361432676,
+   "ci95": [
+    0.7080367438606884,
+    0.9125270564164998
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 10,
+   "r_star": 0.9885185098559913,
+   "ci95": [
+    0.8457694883114958,
+    1.1638986554662012
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 11,
+   "r_star": 0.8508751341439712,
+   "ci95": [
+    0.7488849067693839,
+    0.9718311573995947
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 12,
+   "r_star": 0.8885710750345472,
+   "ci95": [
+    0.7725928119705175,
+    1.0361587142089788
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 13,
+   "r_star": 0.9560287354030015,
+   "ci95": [
+    0.8310758393239789,
+    1.1046379062270202
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 14,
+   "r_star": 0.8289223060974941,
+   "ci95": [
+    0.6933476634599519,
+    0.9533894594252043
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 15,
+   "r_star": 0.8971501062921099,
+   "ci95": [
+    0.7781559271474712,
+    1.050912502302823
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 16,
+   "r_star": 0.8966932686388175,
+   "ci95": [
+    0.7693374257484757,
+    1.0341322485063047
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 17,
+   "r_star": 0.8770037501324267,
+   "ci95": [
+    0.7635766847787546,
+    1.0206651525454058
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 18,
+   "r_star": 0.8634034310966962,
+   "ci95": [
+    0.7575499602089181,
+    0.9948815712888418
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  },
+  {
+   "scenario": "static",
+   "rep": 19,
+   "r_star": 0.9584192169766795,
+   "ci95": [
+    0.8085446679583953,
+    1.0996183463541003
+   ],
+   "signal": true,
+   "verdict": "STATIC"
+  }
+ ],
+ "passed": {
+  "null": 20,
+  "mirror": 20,
+  "oneway": 20,
+  "static": 20
+ },
+ "gate": true
+}

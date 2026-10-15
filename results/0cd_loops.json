@@ -1,0 +1,267 @@
+{
+ "pairs_kept": 21177,
+ "min_trips": 30,
+ "pairs_abs_z_gt3": 0.03806015960712093,
+ "pairs_mean_z2": 1.9079504737801214,
+ "triangles": 224050,
+ "triangles_fdr05": 4284,
+ "triangles_abs_z_gt4": 1542,
+ "median_abs_log_affinity_fdr": 1.728646469368135,
+ "distance_profile": [
+  {
+   "km": [
+    0.0,
+    0.65
+   ],
+   "n": 4236,
+   "mean_z2_minus1": 1.4151566556205155,
+   "frac_abs_z_gt3": 0.056185080264400375
+  },
+  {
+   "km": [
+    0.65,
+    0.97
+   ],
+   "n": 4235,
+   "mean_z2_minus1": 0.9396194592861118,
+   "frac_abs_z_gt3": 0.03778040141676505
+  },
+  {
+   "km": [
+    0.97,
+    1.32
+   ],
+   "n": 4235,
+   "mean_z2_minus1": 0.8505164234289231,
+   "frac_abs_z_gt3": 0.03754427390791027
+  },
+  {
+   "km": [
+    1.32,
+    1.83
+   ],
+   "n": 4235,
+   "mean_z2_minus1": 0.7934807357606215,
+   "frac_abs_z_gt3": 0.03423848878394333
+  },
+  {
+   "km": [
+    1.83,
+    7.86
+   ],
+   "n": 4236,
+   "mean_z2_minus1": 0.5409459893268946,
+   "frac_abs_z_gt3": 0.024551463644948063
+  }
+ ],
+ "station_loop_vs_imbalance_spearman": [
+  -0.08302869779004708,
+  0.008355324236346313
+ ],
+ "station_loop_vs_volume_spearman": [
+  0.5528378319609597,
+  9.491036632534164e-82
+ ],
+ "top_triangles": [
+  {
+   "cycle": [
+    "Broadway & W 48 St",
+    "8 Ave & W 49 St",
+    "Broadway & W 58 St"
+   ],
+   "log_affinity": 3.628,
+   "z": 13.9,
+   "odds_ratio": 37.63
+  },
+  {
+   "cycle": [
+    "Broadway & W 48 St",
+    "8 Ave & W 49 St",
+    "7 Ave & Central Park South"
+   ],
+   "log_affinity": 3.935,
+   "z": 11.3,
+   "odds_ratio": 51.15
+  },
+  {
+   "cycle": [
+    "Greenwich Ave & 8 Ave",
+    "8 Ave & W 16 St",
+    "W 21 St & 6 Ave"
+   ],
+   "log_affinity": 2.584,
+   "z": 10.8,
+   "odds_ratio": 13.25
+  },
+  {
+   "cycle": [
+    "Broadway & W 48 St",
+    "8 Ave & W 49 St",
+    "W 56 St & 8 Ave"
+   ],
+   "log_affinity": 3.578,
+   "z": 9.6,
+   "odds_ratio": 35.81
+  },
+  {
+   "cycle": [
+    "University Pl & E 14 St",
+    "Greenwich Ave & 8 Ave",
+    "8 Ave & W 16 St"
+   ],
+   "log_affinity": 2.529,
+   "z": 9.4,
+   "odds_ratio": 12.54
+  },
+  {
+   "cycle": [
+    "Broadway & W 48 St",
+    "8 Ave & W 49 St",
+    "W 43 St & 10 Ave"
+   ],
+   "log_affinity": 2.948,
+   "z": 9.3,
+   "odds_ratio": 19.07
+  },
+  {
+   "cycle": [
+    "Broadway & W 48 St",
+    "8 Ave & W 49 St",
+    "W 47 St & 10 Ave"
+   ],
+   "log_affinity": 2.58,
+   "z": 9.2,
+   "odds_ratio": 13.2
+  },
+  {
+   "cycle": [
+    "Centre St & Chambers St",
+    "Hudson St & Reade St",
+    "North Moore St & Greenwich St"
+   ],
+   "log_affinity": 2.589,
+   "z": 9.0,
+   "odds_ratio": 13.31
+  },
+  {
+   "cycle": [
+    "Broadway & W 48 St",
+    "8 Ave & W 49 St",
+    "8 Ave & W 55 St"
+   ],
+   "log_affinity": 3.418,
+   "z": 9.0,
+   "odds_ratio": 30.51
+  },
+  {
+   "cycle": [
+    "E 16 St & 5 Ave",
+    "Greenwich Ave & 8 Ave",
+    "8 Ave & W 16 St"
+   ],
+   "log_affinity": 2.702,
+   "z": 8.8,
+   "odds_ratio": 14.92
+  },
+  {
+   "cycle": [
+    "W 41 St & 8 Ave",
+    "11 Ave & W 41 St",
+    "W 42 St & 8 Ave"
+   ],
+   "log_affinity": 2.546,
+   "z": 8.8,
+   "odds_ratio": 12.76
+  },
+  {
+   "cycle": [
+    "Broadway & W 48 St",
+    "8 Ave & W 49 St",
+    "W 56 St & 6 Ave"
+   ],
+   "log_affinity": 3.331,
+   "z": 8.6,
+   "odds_ratio": 27.96
+  },
+  {
+   "cycle": [
+    "Broadway & W 48 St",
+    "8 Ave & W 49 St",
+    "W 53 St & 10 Ave"
+   ],
+   "log_affinity": 2.339,
+   "z": 8.6,
+   "odds_ratio": 10.37
+  },
+  {
+   "cycle": [
+    "Broadway & W 48 St",
+    "8 Ave & W 49 St",
+    "Broadway & W 53 St"
+   ],
+   "log_affinity": 3.363,
+   "z": 8.6,
+   "odds_ratio": 28.86
+  },
+  {
+   "cycle": [
+    "Broadway & W 48 St",
+    "8 Ave & W 49 St",
+    "W 50 St & 10 Ave"
+   ],
+   "log_affinity": 2.089,
+   "z": 8.4,
+   "odds_ratio": 8.08
+  },
+  {
+   "cycle": [
+    "Broadway & W 48 St",
+    "8 Ave & W 49 St",
+    "Broadway & W 61 St"
+   ],
+   "log_affinity": 3.451,
+   "z": 8.4,
+   "odds_ratio": 31.52
+  },
+  {
+   "cycle": [
+    "Broadway & W 48 St",
+    "8 Ave & W 49 St",
+    "W 54 St & 11 Ave"
+   ],
+   "log_affinity": 2.91,
+   "z": 8.3,
+   "odds_ratio": 18.37
+  },
+  {
+   "cycle": [
+    "W 41 St & 8 Ave",
+    "8 Ave & W 49 St",
+    "W 56 St & 6 Ave"
+   ],
+   "log_affinity": 2.86,
+   "z": 8.3,
+   "odds_ratio": 17.46
+  },
+  {
+   "cycle": [
+    "Washington St & Gansevoort St",
+    "Greenwich Ave & 8 Ave",
+    "8 Ave & W 16 St"
+   ],
+   "log_affinity": 2.054,
+   "z": 8.1,
+   "odds_ratio": 7.8
+  },
+  {
+   "cycle": [
+    "Broadway & W 48 St",
+    "8 Ave & W 49 St",
+    "W 59 St & 10 Ave"
+   ],
+   "log_affinity": 3.388,
+   "z": 8.1,
+   "odds_ratio": 29.62
+  }
+ ]
+}

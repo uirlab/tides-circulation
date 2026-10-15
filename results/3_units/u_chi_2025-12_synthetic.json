@@ -1,0 +1,76 @@
+{
+ "S1": {
+  "verdicts": {
+   "HETEROGENEITY": 20
+  },
+  "frac_abs_z_gt3": 0.00703125,
+  "median_z": -0.006693232839618603,
+  "median_h": -0.0004341070019533991,
+  "median_h_big": -0.001076319286113062,
+  "failing_criteria": {
+   "n_z_ge5": 20,
+   "median_h": 20,
+   "median_h_big": 20,
+   "split": 0,
+   "split_big": 0
+  }
+ },
+ "S2": {
+  "0.4": {
+   "verdicts": {
+    "HETEROGENEITY": 20
+   },
+   "frac_abs_z_gt3": 0.00859375,
+   "median_z": 0.1297598699633944,
+   "median_h": 0.0026237813628318474,
+   "median_h_big": 0.0028137975349221958,
+   "failing_criteria": {
+    "n_z_ge5": 20,
+    "median_h": 20,
+    "median_h_big": 20,
+    "split": 0,
+    "split_big": 0
+   }
+  },
+  "0.8": {
+   "verdicts": {
+    "HETEROGENEITY": 20
+   },
+   "frac_abs_z_gt3": 0.02265625,
+   "median_z": 0.6178501155753995,
+   "median_h": 0.008267078572314278,
+   "median_h_big": 0.009267323507059057,
+   "failing_criteria": {
+    "n_z_ge5": 20,
+    "median_h": 20,
+    "median_h_big": 20,
+    "split": 0,
+    "split_big": 0
+   }
+  },
+  "1.6": {
+   "verdicts": {
+    "HETEROGENEITY": 6,
+    "PARTIAL": 14
+   },
+   "frac_abs_z_gt3": 0.3609375,
+   "median_z": 2.255592637137407,
+   "median_h": 0.03147928784604602,
+   "median_h_big": 0.04106172567984567,
+   "failing_criteria": {
+    "n_z_ge5": 20,
+    "median_h": 20,
+    "median_h_big": 20,
+    "split": 0,
+    "split_big": 0
+   }
+  }
+ },
+ "requirements": {
+  "S1": true,
+  "S2": false,
+  "S2_scale_used": null,
+  "all": false
+ },
+ "runtime_s": 12
+}
