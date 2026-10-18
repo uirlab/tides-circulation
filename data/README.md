@@ -18,9 +18,9 @@ By downloading, you accept each provider's terms. This work is not affiliated wi
 | Ttareungyi, Seoul (Apr–May 2026; dataset OA-15182) | `seoul/` | `scripts/fetch_global.sh`, `scripts/fetch_rb.sh` | KOGL Type 1 (attribution) |
 | Ecobici, Mexico City (Apr–May 2026) | `ecobici_mx/` | `scripts/fetch_global.sh`, `scripts/fetch_rb.sh` | none stated by the provider |
 | Ecobici, Buenos Aires (2026) | `ecobici_ba/` | `scripts/fetch_global.sh` | CC BY 2.5 AR |
-| YouBike 2.0, Taipei (Apr–May 2026; 2023 months) | `youbike/` | `scripts/download_core.sh`, `scripts/fetch_rb.sh` | Open Government Data License, Taiwan v1 |
-| YouBike transfer rides, Taipei (2023) | `youbike/xfer_2023MM.csv` | data.taipei dataset d51e8336-fceb-4275-a81a-2a246f4fca1b; `scripts/fetch_rb.sh` | Open Government Data License, Taiwan v1 |
-| Taipei Metro hourly OD (Apr–May 2026) | `taipei_mrt/` | `scripts/fetch_global.sh`, `scripts/fetch_rb.sh` | Open Government Data License, Taiwan v1 |
+| YouBike 2.0, Taipei (Apr–May 2026; 2023 months) | `youbike/` | `scripts/download_core.sh`, `scripts/fetch_rb.sh` | Open Government Data License v1 (data.taipei) |
+| YouBike transfer rides, Taipei (2023) | `youbike/xfer_2023MM.csv` | data.taipei dataset d51e8336-fceb-4275-a81a-2a246f4fca1b; `scripts/fetch_rb.sh` | Open Government Data License v1 (data.taipei) |
+| Taipei Metro hourly OD (Apr–May 2026) | `taipei_mrt/` | `scripts/fetch_global.sh`, `scripts/fetch_rb.sh` | Open Government Data License v1 (data.taipei) |
 | BART hourly OD (2025) and GTFS | `bart/` | `scripts/download_core.sh` | CC BY (BART ridership data); developer terms (GTFS) |
 | NYC TLC yellow and high-volume for-hire trips (May 2025 for the taxi-zone application; Oct–Jun, 2022–2025, for congestion pricing) | `tlc/` | `hpc/tlc_download.sbatch` (about 15 GB); the taxi-zone boundaries and lookup table (`tlc/zones/`, `tlc/taxi_zone_lookup.csv`) are included | none stated (NYC open data) |
 | Citi Bike station status, every 2 minutes (May–June 2025) | `station_status/` | Kaggle dataset `rosenthal/citi-bike-stations` (requires a Kaggle account) | CC BY 4.0 (archive); Lyft licence for the underlying feed |

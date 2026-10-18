@@ -13,7 +13,7 @@ https://opendatacommons.org/licenses/odbl/. Map data © OpenStreetMap contributo
 agencies listed in `data/README.md`. Their own licences continue to govern those data, and the following credits apply:
 - *Powered by TfL Open Data* (Santander Cycles, London).
 - Seoul Metropolitan Government, Seoul Open Data Plaza (KOGL Type 1).
-- Taipei City Government, data.taipei (Open Government Data License, Taiwan, v1.0).
+- Taipei City Government, data.taipei (Open Government Data License, version 1.0).
 - Gobierno de la Ciudad de Buenos Aires (CC BY 2.5 AR).
 - Bay Area Rapid Transit District (CC BY).
 - Lyft Bikes and Scooters, LLC, for Citi Bike, Divvy, Bluebikes and Bay Wheels data, used under their data licence
