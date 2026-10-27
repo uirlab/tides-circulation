@@ -1,6 +1,7 @@
 """Fig 3 v3: circulation marks habitual journeys on particular pairs. Same palette and conventions as src/fig1_v3.py / src/fig2_v3.py.
 Panels: a schematic (round trip vs unreturned leg: both one-way within a window, told apart by the other peak), b habit
-concentration (Lorenz), c enrichment (habit vs transit), d Taipei transfer pairs, e morning-evening mirror test, f taxi-zone circulation map (geography is Supplementary Fig. 10; rider type Supplementary Fig. 7).
+concentration (Lorenz), c enrichment (habit vs transit), d Taipei transfer pairs, e morning-evening mirror test (taxi zones: Supplementary Fig. 14, src/sfig14_taxi.py;
+geography is Supplementary Fig. 10; rider type Supplementary Fig. 7).
 Run from the repository root: python3 src/fig3_v3.py  ->  results/figures/fig3_v3.pdf|png
 """
 import glob
@@ -105,12 +106,12 @@ ax.set_xlabel("transfer share of rides\n(pair decile; Taipei)"); ax.set_ylabel("
 ax.legend(frameon=False, fontsize=5.4, loc="center left", bbox_to_anchor=(0.0, 0.66)); ax.set_ylim(0, 2.6); clean(ax)
 
 # (e) morning-evening mirror test (pre-specified; rail systems are positive controls)
-ax = fig.add_subplot(G[1, 1]); letter(ax, "e", x=-0.42)
+ax = fig.add_subplot(G[1, 1:]); letter(ax, "e", x=-0.2)
 UN = [("g_lon", "London"), ("g_baw", "Bay Wheels"), ("g_bue", "Buenos Aires"), ("divvy_mj", "Chicago"), ("bluebikes", "Boston"),
-      ("g_seo", "Seoul"), ("g_ybk", "YouBike"), ("g_mex", "Mexico City"), ("citibike", "New York"), ("tlc_2505", "NYC taxi"),
+      ("g_seo", "Seoul"), ("g_ybk", "YouBike"), ("g_mex", "Mexico City"), ("citibike", "New York"),
       ("g_bar", "BART"), ("g_tpex", "Taipei Metro")]
-COLS = {"tlc_2505": SLATE, "g_bar": SAGE, "g_tpex": SAGE}
-GAP = lambda y: y + 0.6 * (y >= 9) + 0.6 * (y >= 10)  # gaps separate bike share, taxi and rail
+COLS = {"g_bar": SAGE, "g_tpex": SAGE}
+GAP = lambda y: y + 0.6 * (y >= 9)  # a gap separates bike share and rail (taxi: src/sfig14_taxi.py)
 for y, (u, nm) in enumerate(UN):
     r = J(f"results/ampm/{u}_real.json")["AM_PM"]; col = COLS.get(u, TERRA); yy = GAP(y)
     ax.errorbar(r["r_star"], yy, xerr=[[r["r_star"] - r["ci95"][0]], [r["ci95"][1] - r["r_star"]]], fmt="o", color=col, ms=3.2,
@@ -121,62 +122,6 @@ ax.axvline(0, color=INK2, lw=0.6); ax.axvline(-0.5, color=MUTE, lw=0.6, ls=(0, (
 ax.set_xlim(-1.0, 0.25); ax.set_xticks([-1, -0.5, 0]); ax.set_xlabel("morning–evening r*")
 ax.text(-0.98, -0.95, "reversed", fontsize=5.6, color=INK2); ax.text(0.22, -0.95, "unrelated", fontsize=5.6, color=INK2, ha="right")
 clean(ax)
-
-# (f) the same decomposition on taxi and ride-hail trips between New York's taxi zones (May 2025)
-def read_zones(shp, dbf):
-    """Taxi-zone polygons keyed by LocationID (minimal shapefile and dBase reader)."""
-    b = open(dbf, "rb").read(); nrec = struct.unpack("<I", b[4:8])[0]; hl, rl = struct.unpack("<HH", b[8:12]); fields, q = [], 32
-    while b[q] != 0x0D:
-        fields.append((b[q:q + 11].split(b"\0")[0].decode(), b[q + 16])); q += 32
-    ids = []
-    for i in range(nrec):
-        r = b[hl + i * rl + 1: hl + (i + 1) * rl]; off = 0; rec = {}
-        for nm, ln in fields:
-            rec[nm] = r[off:off + ln].decode("latin1").strip(); off += ln
-        ids.append(int(float(rec["LocationID"])))
-    s = open(shp, "rb").read(); pos = 100; polys = []
-    while pos < len(s):
-        _, clen = struct.unpack(">ii", s[pos:pos + 8]); rec = s[pos + 8:pos + 8 + 2 * clen]; pos += 8 + 2 * clen
-        if struct.unpack("<i", rec[:4])[0] != 5:
-            polys.append([]); continue
-        npart, npt = struct.unpack("<ii", rec[36:44]); parts = list(struct.unpack(f"<{npart}i", rec[44:44 + 4 * npart])) + [npt]
-        pts = np.frombuffer(rec[44 + 4 * npart:44 + 4 * npart + 16 * npt], "<f8").reshape(-1, 2)
-        polys.append([pts[parts[i]:parts[i + 1]] for i in range(npart)])
-    out = {}
-    for i, pl in zip(ids, polys):
-        out.setdefault(i, []).extend(pl)
-    return out
-
-
-def centroid(rings):
-    ring = max(rings, key=len); x, y = ring[:, 0], ring[:, 1]; c = x * np.roll(y, -1) - np.roll(x, -1) * y; a = c.sum() / 2
-    return np.array([((x + np.roll(x, -1)) * c).sum() / (6 * a), ((y + np.roll(y, -1)) * c).sum() / (6 * a)]) if abs(a) > 0 else ring.mean(0)
-
-
-ax = fig.add_subplot(G[1, 2]); ax.set_aspect("equal"); ax.axis("off"); letter(ax, "f", x=0.0, y=1.0)
-ZD = "data/raw/tlc/zones/"
-Z = read_zones(ZD + "taxi_zones.shp", ZD + "taxi_zones.dbf")
-for rings in Z.values():
-    for ring in rings:
-        ax.fill(ring[:, 0], ring[:, 1], fc=PALE, ec=SURF, lw=0.25, zorder=0)
-cz = {k: centroid(v) for k, v in Z.items() if v}
-zid = np.load("results/figdata_stations_tlc_2505.npz", allow_pickle=True)["station_id"].astype(int)
-cp = np.load("results/figdata_circ_tlc_2505.npz"); zz = cp["eps"] / cp["se"]; ok = cp["t"] >= 200
-top = np.flatnonzero(ok)[np.argsort(-np.abs(zz[ok]))[:45]]; zmax = np.abs(zz[top]).max()
-for k in top:
-    a, b_ = zid[cp["lo"][k]], zid[cp["hi"][k]]
-    if a not in cz or b_ not in cz:
-        continue
-    p_, q_ = (cz[a], cz[b_]) if cp["eps"][k] > 0 else (cz[b_], cz[a])
-    ax.add_patch(FancyArrowPatch(p_, q_, arrowstyle="-|>,head_length=2.4,head_width=1.4", color=SLATE, alpha=0.75,
-                                 lw=0.4 + 1.6 * abs(zz[k]) / zmax, connectionstyle="arc3,rad=-0.25", shrinkA=1, shrinkB=1, zorder=2))
-ht = J("results/1_replication_tlc_2505_real.json")["decision"]["median_h"]; rt = J("results/ampm/tlc_2505_real.json")["AM_PM"]["r_star"]
-ax.text(0.0, 0.99, "taxi and ride-hail, New York", transform=ax.transAxes, fontsize=6.4, color=INK, fontweight="bold", va="top")
-ax.text(0.0, 0.91, f"h′ = {ht:.2f}   r* = {rt:.2f}".replace("-", "−"), transform=ax.transAxes, fontsize=6.0, color=SLATE, va="top")
-xs = np.concatenate([r[:, 0] for v in Z.values() for r in v]); ys = np.concatenate([r[:, 1] for v in Z.values() for r in v])
-ax.set_xlim(xs.min(), xs.max()); ax.set_ylim(ys.min(), ys.max() + 0.12 * (ys.max() - ys.min()))
-ax.plot([xs.max() - 32808, xs.max()], [ys.min() + 2000] * 2, color=INK2, lw=1.0, solid_capstyle="butt")  # 10 km in feet
-ax.text(xs.max() - 16404, ys.min() + 5000, "10 km", ha="center", fontsize=5.4, color=INK2)
 
 for ext in ("pdf", "png"):
     fig.savefig(f"{OUT}/fig3_v3.{ext}", dpi=240, bbox_inches="tight")

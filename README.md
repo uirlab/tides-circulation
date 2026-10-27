@@ -43,7 +43,7 @@ processes with `NWORKERS`. Random seeds are fixed in the code.
 
 | Step | Scripts | Output |
 |---|---|---|
-| 1. Download | `scripts/download_core.sh`, `scripts/fetch_global.sh`, `scripts/fetch_rb.sh`, `scripts/fetch_landuse.sh`, `src/fetch_osm.py`, `src/fetch_mode_data.py`, `src/fetch_overture.py`, `hpc/steps24_download.sbatch`, `hpc/tlc_download.sbatch` | `data/raw/` |
+| 1. Download | `scripts/download_core.sh`, `scripts/fetch_global.sh`, `scripts/fetch_rb.sh`, `scripts/fetch_fare.sh`, `scripts/fetch_landuse.sh`, `src/fetch_osm.py`, `src/fetch_mode_data.py`, `src/fetch_overture.py`, `hpc/steps24_download.sbatch`, `hpc/tlc_download.sbatch` | `data/raw/` |
 | 2. Prepare trip arrays | `src/prep_citibike.py`, `src/prep_lyft.py`, `src/prep_global.py`, `src/prep_unit.py`, `src/prep_xfer.py`, `src/prep_xfer_rb.py`, `src/prep_rb.py`, `src/tpe_merge.py`, `src/tpe_exclude.py`, `src/tlc_prep.py`, `src/station_table.py`, `src/station_coords.py` | `data/processed/*_weekday_trips.npz` |
 | 3. Existence test (synthetic gate, then data) | `src/irrev.py` (unstratified), `src/irrev_strat.py all` (stratified; `CITY=…`, `BIN_MIN=60` for the rail comparison) | `results/0cb_strata_real.json`, `results/1_replication_*`, `results/3_units/` |
 | 4. Resolution and coarse-graining | `src/tidal_share.py`, `src/toy_tide.py` | `results/coarsegrain.json`, `results/5_tidal_share_*` |
@@ -53,6 +53,7 @@ processes with `NWORKERS`. Random seeds are fixed in the code.
 | 7b. Taxi-zone application | `src/prep_tlc_unit.py 2025 5`, then steps 3 and 7 with `CITY=tlc_2505` (`hpc/taxi.sbatch`) | `results/1_replication_tlc_2505_*`, `results/ampm/tlc_2505_real.json` |
 | 8. One-way streets and explained share | `src/street_graph.py`, `src/lion_extract.py`, `src/oneway.py`, `src/dev_es.py`, `src/dev_es30.py`, `src/mechanism_share.py`, `src/shrinkage_calibration.py` | `results/1_oneway_*`, `devES*.json` |
 | 9. Rebalancing; congestion pricing | `src/rebalancing.py`; `src/tlc_irrev.py` | `results/4_rebalancing*.json`; `results/3_congestion_*` |
+| 9b. Taipei fare change (28 Feb 2024) | `scripts/fetch_fare.sh`; `src/prep_fare.py`; `src/fare.py` (`power`, `month <unit>`, `combine`; `hpc/fare.sbatch`) | `results/fare2024/`, `results/fare2024.json`, `results/figdata_fare2024.csv` |
 | 10. Robustness and uncertainty | `src/rb_spatial.py`, `src/rb_boot.py`, `src/rb_boot_summary.py`, `src/rb_thresholds.py`, `src/rb_ridge_check.py`, `src/rb_uncert_summary.py` | `results/rb/`, `results/1_replication_rb/` |
 | 11. Figures and tables | see below | `results/figures/`, `results/tables/` |
 
@@ -66,11 +67,13 @@ The `hpc/` folder holds the job scripts used for each step, with the cluster-spe
 | Fig. 1 | `src/fig1_v3.py` | `fig1_v3.png` |
 | Fig. 2 | `src/fig2_v3.py` | `fig2_v3.png` |
 | Fig. 3 | `src/fig3_v3.py` | `fig3_v3.png` |
-| Fig. 4 | `src/fig4_v3.py` | `fig4_v3.png` |
+| Fig. 4 | `src/fig4_v4.py` | `fig4_v4.png` |
 | Supplementary Fig. 1 | `src/toy_tide.py` | `si_toy_tide.png` |
 | Supplementary Figs. 2–7, 10 | `src/ed_figures.py` | `ed1_calibration`, `ed2_units`, `ed3_binwidth`, `ed4_taipei`, `ed5_transit_radius`, `ed7_ridertype`, `ed9_not_geography` |
 | Supplementary Figs. 8, 9, 11 | `src/si_figures.py` (with `src/ed_oneway_distance.py`) | `si_oneway`, `si_robustness`, `si_operations` |
 | Supplementary Fig. 12 | `src/sfig12_mirror.py` | `SFig12_mirror.png` |
+| Supplementary Fig. 13 | `src/sfig13_oneway.py` | `sfig13_oneway.png` |
+| Supplementary Fig. 14 | `src/sfig14_taxi.py` | `sfig14_taxi.png` |
 | Supplementary Table S8 | `src/table_s8.py` | `results/tables/table_s8.md` |
 | Supplementary Tables S1–S7 | assembled from the result files named in each table's source line | — |
 

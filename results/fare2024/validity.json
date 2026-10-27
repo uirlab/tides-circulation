@@ -1,0 +1,77 @@
+{
+ "months": {
+  "g_f2212": {
+   "rides_06_22": 1578882,
+   "active_stations": 1927,
+   "weekdays": 20
+  },
+  "g_f2301": {
+   "rides_06_22": 1390692,
+   "active_stations": 1991,
+   "weekdays": 15
+  },
+  "g_f2302": {
+   "rides_06_22": 1691228,
+   "active_stations": 2038,
+   "weekdays": 18
+  },
+  "g_f2303": {
+   "rides_06_22": 2595235,
+   "active_stations": 2115,
+   "weekdays": 23
+  },
+  "g_f2304": {
+   "rides_06_22": 1825371,
+   "active_stations": 2090,
+   "weekdays": 17
+  },
+  "g_f2305": {
+   "rides_06_22": 2397736,
+   "active_stations": 2126,
+   "weekdays": 22
+  },
+  "g_f2312": {
+   "rides_06_22": 1654775,
+   "active_stations": 2144,
+   "weekdays": 21
+  },
+  "g_f2401": {
+   "rides_06_22": 1761852,
+   "active_stations": 2210,
+   "weekdays": 22
+  },
+  "g_f2402": {
+   "rides_06_22": 1232716,
+   "active_stations": 2173,
+   "weekdays": 14
+  },
+  "g_f2403": {
+   "rides_06_22": 2172645,
+   "active_stations": 2276,
+   "weekdays": 21
+  },
+  "g_f2404": {
+   "rides_06_22": 2277688,
+   "active_stations": 2300,
+   "weekdays": 20
+  },
+  "g_f2405": {
+   "rides_06_22": 2769000,
+   "active_stations": 2336,
+   "weekdays": 22
+  }
+ },
+ "tau": {
+  "n_pairs": 36786,
+  "threshold_top_decile": 0.3698273401826484,
+  "n_T": 3679,
+  "median_tau": 0.09090909090909091,
+  "transfer_share_of_rides": 0.19527361142177796
+ },
+ "stations_active_in_all_12": 1704,
+ "station_change_pre_to_post": {
+  "Y0": 0.0629617192746812,
+  "Y1": 0.058985751493795036
+ },
+ "check2_flag": false
+}

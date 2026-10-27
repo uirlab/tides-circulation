@@ -18,7 +18,7 @@ By downloading, you accept each provider's terms. This work is not affiliated wi
 | Ttareungyi, Seoul (Apr–May 2026; dataset OA-15182) | `seoul/` | `scripts/fetch_global.sh`, `scripts/fetch_rb.sh` | KOGL Type 1 (attribution) |
 | Ecobici, Mexico City (Apr–May 2026) | `ecobici_mx/` | `scripts/fetch_global.sh`, `scripts/fetch_rb.sh` | none stated by the provider |
 | Ecobici, Buenos Aires (2026) | `ecobici_ba/` | `scripts/fetch_global.sh` | CC BY 2.5 AR |
-| YouBike 2.0, Taipei (Apr–May 2026; 2023 months) | `youbike/` | `scripts/download_core.sh`, `scripts/fetch_rb.sh` | Open Government Data License v1 (data.taipei) |
+| YouBike 2.0, Taipei (Apr–May 2026; 2023 months; Dec 2022–Feb 2023 and Jan–May 2024) | `youbike/` | `scripts/download_core.sh`, `scripts/fetch_rb.sh`, `scripts/fetch_fare.sh` | Open Government Data License v1 (data.taipei) |
 | YouBike transfer rides, Taipei (2023) | `youbike/xfer_2023MM.csv` | data.taipei dataset d51e8336-fceb-4275-a81a-2a246f4fca1b; `scripts/fetch_rb.sh` | Open Government Data License v1 (data.taipei) |
 | Taipei Metro hourly OD (Apr–May 2026) | `taipei_mrt/` | `scripts/fetch_global.sh`, `scripts/fetch_rb.sh` | Open Government Data License v1 (data.taipei) |
 | BART hourly OD (2025) and GTFS | `bart/` | `scripts/download_core.sh` | CC BY (BART ridership data); developer terms (GTFS) |

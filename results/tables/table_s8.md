@@ -9,48 +9,50 @@
 | 1 | Calibration, New York: Power near threshold (estimated h′ 0.10) | 4/20 (6%–44%) | Clopper–Pearson |
 | 1 | New York split-half correlation | ρ = 0.41; permutation P < 0.001 (1,000 permutations; floor 0.001) | permutation |
 | 1 | New York circulation share after subtracting the tide-only artefact, 15 min → whole day | 32% → 58%; simulation SD of the artefact ≤ 751 deviance units (< 0.3% of the circulation component) | 3 simulations |
-| 1–2 | Median h′, 15-min bins: New York | 0.26 (0.25–0.27); SE 0.004; 100 subsamples of 15 of 20 weekdays | delete-d jackknife |
-| 1–2 | Median h′, 15-min bins: Chicago | 0.19 (0.18–0.20); SE 0.007; 100 subsamples of 31 of 41 weekdays | delete-d jackknife |
-| 1–2 | Median h′, 15-min bins: Boston | 0.15 (0.14–0.16); SE 0.007; 100 subsamples of 15 of 20 weekdays | delete-d jackknife |
-| 1–2 | Median h′, 15-min bins: London | 0.21 (0.19–0.22); SE 0.008; 100 subsamples of 14 of 19 weekdays | delete-d jackknife |
-| 1–2 | Median h′, 15-min bins: Seoul | 0.32 (0.31–0.34); SE 0.009; 100 subsamples of 14 of 18 weekdays | delete-d jackknife |
-| 1–2 | Median h′, 15-min bins: Mexico City | 0.44 (0.42–0.46); SE 0.012; 100 subsamples of 15 of 20 weekdays | delete-d jackknife |
-| 1–2 | Median h′, 15-min bins: Buenos Aires | 0.24 (0.22–0.26); SE 0.010; 100 subsamples of 14 of 19 weekdays | delete-d jackknife |
-| 1–2 | Median h′, 15-min bins: SF Bay Area (Bay Wheels) | 0.15 (0.14–0.16); SE 0.006; 100 subsamples of 16 of 21 weekdays | delete-d jackknife |
+| 1 | Median h′, 15-min bins: New York | 0.26 (0.25–0.27); SE 0.004; 100 subsamples of 15 of 20 weekdays | delete-d jackknife |
+| 1 | Median h′, 15-min bins: Chicago | 0.19 (0.18–0.20); SE 0.007; 100 subsamples of 31 of 41 weekdays | delete-d jackknife |
+| 1 | Median h′, 15-min bins: Boston | 0.15 (0.14–0.16); SE 0.007; 100 subsamples of 15 of 20 weekdays | delete-d jackknife |
+| 1 | Median h′, 15-min bins: London | 0.21 (0.19–0.22); SE 0.008; 100 subsamples of 14 of 19 weekdays | delete-d jackknife |
+| 1 | Median h′, 15-min bins: Seoul | 0.32 (0.31–0.34); SE 0.009; 100 subsamples of 14 of 18 weekdays | delete-d jackknife |
+| 1 | Median h′, 15-min bins: Mexico City | 0.44 (0.42–0.46); SE 0.012; 100 subsamples of 15 of 20 weekdays | delete-d jackknife |
+| 1 | Median h′, 15-min bins: Buenos Aires | 0.24 (0.22–0.26); SE 0.010; 100 subsamples of 14 of 19 weekdays | delete-d jackknife |
+| 1 | Median h′, 15-min bins: SF Bay Area (Bay Wheels) | 0.15 (0.14–0.16); SE 0.006; 100 subsamples of 16 of 21 weekdays | delete-d jackknife |
 | 3 | Median h′, 15-min bins: NYC taxi and ride-hail (zones) | 0.31 (0.30–0.32); SE 0.006; 100 subsamples of 16 of 21 weekdays | delete-d jackknife |
-| 2 | Median h′, 60-min bins: Taipei (YouBike) | 0.541 (0.528–0.553); SE 0.006; 200 subsamples of 15 of 20 weekdays | delete-d jackknife |
-| 2 | Median h′, 60-min bins: Taipei Metro | 0.098 (0.096–0.101); SE 0.001; 200 subsamples of 15 of 20 weekdays | delete-d jackknife |
-| 2 | Median h′, 60-min bins: SF Bay Area (Bay Wheels) | 0.274 (0.261–0.287); SE 0.007; 200 subsamples of 16 of 21 weekdays | delete-d jackknife |
-| 2 | Median h′, 60-min bins: BART | 0.097 (0.084–0.110); SE 0.007; 200 subsamples of 16 of 21 weekdays | delete-d jackknife |
-| 2 | Taipei: bike minus rail, median h′ | 0.44 (0.43–0.46); SE 0.006; hourly intervals above zero in 16/16, below in 0/16 | delete-d jackknife, paired days |
-| 2 | Taipei: hours with bike > rail | 16/16; one-sided sign test P = 1.5 × 10⁻⁵ (hours treated as independent) | sign test |
-| 2 | Taipei: rail/bike tide per trip | 1.67 (1.63–1.72); SE 0.024 | delete-d jackknife, paired days |
-| 2 | Taipei: bike/rail circulation per trip | 8.3 (8.1–8.6); SE 0.130 | delete-d jackknife, paired days |
-| 2 | Bay Area: bike minus rail, median h′ | 0.18 (0.16–0.19); SE 0.009; hourly intervals above zero in 11/16, below in 2/16 | delete-d jackknife, paired days |
-| 2 | Bay Area: hours with bike > rail | 13/16; one-sided sign test P = 0.011 (hours treated as independent) | sign test |
-| 2 | Bay Area: rail/bike tide per trip | 0.96 (0.90–1.02); SE 0.029 | delete-d jackknife, paired days |
-| 2 | Bay Area: bike/rail circulation per trip | 3.9 (3.7–4.1); SE 0.113 | delete-d jackknife, paired days |
-| 3 | Habit, New York (n = 24,223 pairs) | β = 0.16; top-decile share 37%, enrichment 2.87; P < 0.001 | permutation (2,000; floor 0.0005) |
-| 3 | Habit, Chicago (n = 8,195 pairs) | β = 0.28; top-decile share 34%, enrichment 3.41; P < 0.001 | permutation (2,000; floor 0.0005) |
-| 3 | Habit, Boston (n = 10,565 pairs) | β = 0.25; top-decile share 35%, enrichment 3.52; P < 0.001 | permutation (2,000; floor 0.0005) |
-| 3 | Transit-connected pairs, New York | β = 0.040; enrichment 1.20; P < 0.001 | permutation (2,000) |
-| 3 | Transit-connected pairs, Chicago | β = 0.041; enrichment 1.53; P < 0.001 | permutation (2,000) |
-| 3 | Transit-connected pairs, Boston | β = 0.033; enrichment 1.25; P < 0.001 | permutation (2,000) |
-| 3 | Taipei transfer share, May → June 2023 (T1) | β = 0.085; enrichment 2.31; P < 0.001 | permutation (2,000) |
-| 3 | Taipei, transfer rides removed (T2) | enrichment 1.43; P = 0.0035 | permutation (2,000) |
-| 3 | Taipei, direction agreement (T3) | 1581 of 2,411 = 65.6% (63.6%–67.5%); P = 8.0 × 10⁻⁵⁴ | Clopper–Pearson; binomial |
-| 3 | Casual > member circulation, e-bikes, New York | 31 of 31 months; two-sided sign test P = 9.3 × 10⁻¹⁰ | sign test |
-| 3 | Land-use interactions, share of loop excess explained out of sample | 0.12% (0.02%–0.23%) | as in section 6.1 |
-| 4 | One-way agreement, New York | 1451 of 1,630 = 89.0% (87.4%–90.5%); one-sided P = 8.0 × 10⁻²⁴⁸; two-way control 45.9% (41.1%–50.8%), n = 425 | Clopper–Pearson; binomial (approximate) |
-| 4 | One-way agreement, Chicago | 70 of 90 = 77.8% (67.8%–85.9%); one-sided P = 5.7 × 10⁻⁸; two-way control 49.8% (45.1%–54.4%), n = 462 | Clopper–Pearson; binomial (approximate) |
-| 4 | One-way agreement, Boston | 27 of 34 = 79.4% (62.1%–91.3%); one-sided P = 4.1 × 10⁻⁴; two-way control 58.8% (44.2%–72.4%), n = 51 | Clopper–Pearson; binomial (approximate) |
-| 4 | Midtown one-way pairs with the traffic | 472 of 506 = 93.3% (90.7%–95.3%) | Clopper–Pearson (descriptive) |
-| 4 | Street direction, share of loop excess explained (all pairs) | 3.3% (3.1%–3.5%) | day-block bootstrap (500) |
-| 4 | Street direction, pairs with ≥ 30 trips | 5.1% (interval not computed) | — |
+| 1 | Median h′, 60-min bins: Taipei (YouBike) | 0.541 (0.528–0.553); SE 0.006; 200 subsamples of 15 of 20 weekdays | delete-d jackknife |
+| 1 | Median h′, 60-min bins: Taipei Metro | 0.098 (0.096–0.101); SE 0.001; 200 subsamples of 15 of 20 weekdays | delete-d jackknife |
+| 1 | Median h′, 60-min bins: SF Bay Area (Bay Wheels) | 0.274 (0.261–0.287); SE 0.007; 200 subsamples of 16 of 21 weekdays | delete-d jackknife |
+| 1 | Median h′, 60-min bins: BART | 0.097 (0.084–0.110); SE 0.007; 200 subsamples of 16 of 21 weekdays | delete-d jackknife |
+| 1 | Taipei: bike minus rail, median h′ | 0.44 (0.43–0.46); SE 0.006; hourly intervals above zero in 16/16, below in 0/16 | delete-d jackknife, paired days |
+| 1 | Taipei: hours with bike > rail | 16/16; one-sided sign test P = 1.5 × 10⁻⁵ (hours treated as independent) | sign test |
+| 1 | Taipei: rail/bike tide per trip | 1.67 (1.63–1.72); SE 0.024 | delete-d jackknife, paired days |
+| 1 | Taipei: bike/rail circulation per trip | 8.3 (8.1–8.6); SE 0.130 | delete-d jackknife, paired days |
+| 1 | Bay Area: bike minus rail, median h′ | 0.18 (0.16–0.19); SE 0.009; hourly intervals above zero in 11/16, below in 2/16 | delete-d jackknife, paired days |
+| 1 | Bay Area: hours with bike > rail | 13/16; one-sided sign test P = 0.011 (hours treated as independent) | sign test |
+| 1 | Bay Area: rail/bike tide per trip | 0.96 (0.90–1.02); SE 0.029 | delete-d jackknife, paired days |
+| 1 | Bay Area: bike/rail circulation per trip | 3.9 (3.7–4.1); SE 0.113 | delete-d jackknife, paired days |
+| 2 | Habit, New York (n = 24,223 pairs) | β = 0.16; top-decile share 37%, enrichment 2.87; P < 0.001 | permutation (2,000; floor 0.0005) |
+| 2 | Habit, Chicago (n = 8,195 pairs) | β = 0.28; top-decile share 34%, enrichment 3.41; P < 0.001 | permutation (2,000; floor 0.0005) |
+| 2 | Habit, Boston (n = 10,565 pairs) | β = 0.25; top-decile share 35%, enrichment 3.52; P < 0.001 | permutation (2,000; floor 0.0005) |
+| 2 | Transit-connected pairs, New York | β = 0.040; enrichment 1.20; P < 0.001 | permutation (2,000) |
+| 2 | Transit-connected pairs, Chicago | β = 0.041; enrichment 1.53; P < 0.001 | permutation (2,000) |
+| 2 | Transit-connected pairs, Boston | β = 0.033; enrichment 1.25; P < 0.001 | permutation (2,000) |
+| 2 | Taipei transfer share, May → June 2023 (T1) | β = 0.085; enrichment 2.31; P < 0.001 | permutation (2,000) |
+| 2 | Taipei, transfer rides removed (T2) | enrichment 1.43; P = 0.0035 | permutation (2,000) |
+| 2 | Taipei, direction agreement (T3) | 1581 of 2,411 = 65.6% (63.6%–67.5%); P = 8.0 × 10⁻⁵⁴ | Clopper–Pearson; binomial |
+| 2 | Casual > member circulation, e-bikes, New York | 31 of 31 months; two-sided sign test P = 9.3 × 10⁻¹⁰ | sign test |
+| 2 | Land-use interactions, share of loop excess explained out of sample | 0.12% (0.02%–0.23%) | as in section 6.1 |
+| 2 | One-way agreement, New York | 1451 of 1,630 = 89.0% (87.4%–90.5%); one-sided P = 8.0 × 10⁻²⁴⁸; two-way control 45.9% (41.1%–50.8%), n = 425 | Clopper–Pearson; binomial (approximate) |
+| 2 | One-way agreement, Chicago | 70 of 90 = 77.8% (67.8%–85.9%); one-sided P = 5.7 × 10⁻⁸; two-way control 49.8% (45.1%–54.4%), n = 462 | Clopper–Pearson; binomial (approximate) |
+| 2 | One-way agreement, Boston | 27 of 34 = 79.4% (62.1%–91.3%); one-sided P = 4.1 × 10⁻⁴; two-way control 58.8% (44.2%–72.4%), n = 51 | Clopper–Pearson; binomial (approximate) |
+| 2 | Street direction, share of loop excess explained (all pairs) | 3.3% (3.1%–3.5%) | day-block bootstrap (500) |
+| 2 | Street direction, pairs with ≥ 30 trips | 5.1% (interval not computed) | — |
 | 4 | Rebalancing, June 2025: β, trip volume (per SD) | +1.354 (interval not stored) | least squares |
 | 4 | Rebalancing, June 2025: β, tidal imbalance (per SD) | +0.172 (+0.127 to +0.217) | least squares |
 | 4 | Rebalancing, June 2025: β, circulation intensity (per SD) | −0.020 (−0.045 to +0.005) | least squares |
 | 4 | Rebalancing: out-of-sample R² change from adding circulation | −0.0002 (interval not computed) | — |
+| 4 | Taipei fare change, ratio of changes 2024 vs 2023: circulation enrichment on transit-linked pairs | 0.978 (0.898 to 1.065); P = 0.56; descriptive (calibration check failed) | difference in differences; between-month variance, t (8 df) |
+| 4 | Taipei fare change, ratio of changes 2024 vs 2023: share of rides on transit-linked pairs | 0.893 (0.793 to 1.005); P = 0.057; descriptive (calibration check failed) | difference in differences; between-month variance, t (8 df) |
+| 4 | Taipei rides per weekday, Dec–Feb to Mar–May | +39% (2024) vs +24% (2023); census of rides, no sampling interval | — |
 | 3 | Morning–evening r*, New York | −0.09 (−0.14 to −0.04); ONE-WAY; partial given midday −0.36 (exploratory) | split-half disattenuated correlation; station bootstrap |
 | 3 | Morning–evening r*, Chicago | −0.53 (−0.62 to −0.44); MIRRORED; partial given midday −0.62 (exploratory) | split-half disattenuated correlation; station bootstrap |
 | 3 | Morning–evening r*, Boston | −0.49 (−0.60 to −0.36); MIXED; partial given midday −0.55 (exploratory) | split-half disattenuated correlation; station bootstrap |

@@ -1,0 +1,23 @@
+{
+ "template": "g_f2309",
+ "n_planted_pairs": 2037,
+ "baseline_E": 1.4203932617895427,
+ "E_ratio_by_k": {
+  "0.5": 0.3744246762800118,
+  "0.6": 0.4894999853457674,
+  "0.7": 0.6132243440182887,
+  "0.8": 0.7434027503652986,
+  "0.9": 0.8742329232424167
+ },
+ "k_for_25pct": 0.8,
+ "empirical_sd_delta_null": 0.02185511709196481,
+ "mean_jackknife_se": 0.028415597667371943,
+ "mean_used_se_null": 0.02861268578734797,
+ "false_change_rate": 0.0,
+ "stable_rate_null": 1.0,
+ "power_change_25pct": 1.0,
+ "mean_ci_halfwidth_null": 0.057132248876915204,
+ "calibration_ok": false,
+ "pass": false,
+ "note": "synthetic months contain no month-to-month fluctuation; power is an upper bound"
+}

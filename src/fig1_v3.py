@@ -1,6 +1,6 @@
 """Fig 1 v3: from observation to decomposition. Same muted palette as figures_v2.
-Panels: a scale (world map), b NYC morning vs evening net flows, c station x hour tide heatmap,
-d triangle loop test vs tide-only null, e the idea (tide + circulation), f the split across aggregation windows.
+Panels: a three-station example (tide only; tide plus circulation), b NYC morning vs evening net flows, c station x hour
+tide heatmap, d triangle loop test vs tide-only null, e scale (world map), f the split across aggregation windows.
 Explanations live in the caption, not on the figure.
 Needs results/figdata_motiv_triangles.npz (src/motiv_triangles.py) and data/raw/naturalearth/ne_110m_land.shp.
 Run from the project root:
@@ -117,32 +117,36 @@ def draw_b(fig, spec, style, label=True):
 
 def build(style, path):
     fig = plt.figure(figsize=(7.4, 7.2))
-    G = fig.add_gridspec(3, 1, height_ratios=[1.05, 1, 0.8], hspace=0.38)
-    r1 = G[0].subgridspec(1, 2, width_ratios=[1.75, 1], wspace=0.06)
+    G = fig.add_gridspec(3, 1, height_ratios=[0.95, 1, 0.95], hspace=0.38)
+    r1 = G[0].subgridspec(1, 2, width_ratios=[1.45, 1], wspace=0.06)
     r2 = G[1].subgridspec(1, 2, width_ratios=[1, 1.15], wspace=0.5)
-    r3 = G[2].subgridspec(1, 2, width_ratios=[1.35, 1], wspace=0.3)
+    r3 = G[2].subgridspec(1, 2, width_ratios=[1.9, 1], wspace=0.22)
 
-    # (a) scale
-    ax = fig.add_subplot(r1[0]); letter(ax, "a", x=0.0)
-    for p in read_polygons("data/raw/naturalearth/ne_110m_land.shp"):
-        ax.add_patch(Polygon(p, closed=True, fc=PALE, ec=GRID, lw=0.3))
-    # weekday trips between different stations, 06:00-22:00 (the analysed set; processed npz counts, checked 2026-10-05)
-    sys_ = [("New York", -74.0, 40.7, 2.90e6, "bike", (-45, 22)), ("Boston", -71.1, 42.4, 0.27e6, "bike", (-48, 60)),
-            ("Chicago", -87.6, 41.9, 0.52e6, "bike", (-86, 63)), ("Mexico City", -99.1, 19.4, 1.09e6, "bike", (-92, 2)),
-            ("Buenos Aires", -58.4, -34.6, 0.16e6, "bike", (-90, -32)), ("London", -0.1, 51.5, 0.50e6, "bike", (-22, 59)),
-            ("Seoul", 127.0, 37.6, 1.84e6, "bike", (135, 49)), ("Taipei bike", 121.5, 25.0, 4.74e6, "bike", (140, 12)),
-            ("Taipei metro", 121.5, 25.0, 39.7e6, "metro", (140, -4)), ("SF bike", -122.4, 37.8, 0.23e6, "bike", (-118, 60)),
-            ("BART", -122.4, 37.8, 3.57e6, "metro", (-126, 18))]
-    for nm, lon, lat, n, kind, pos in sys_:
-        s = 14 + 60 * np.log10(n / 1e5)
-        if kind == "bike":
-            ax.scatter(lon, lat, s=s, color=TERRA, alpha=0.85, ec="white", lw=0.6, zorder=4)
-        else:
-            ax.scatter(lon, lat, s=s * 1.6, fc="none", ec=SAGE, lw=1.6, zorder=3)
-        lab = f"{nm}\n{n / 1e6:.1f}M" if n >= 1e6 else f"{nm}\n{n / 1e3:.0f}k"
-        ax.annotate(lab, (lon, lat), xytext=pos, textcoords="data", ha="center", va="center", fontsize=5.8, color=INK, linespacing=0.95,
-                    zorder=4, arrowprops=dict(arrowstyle="-", color=INK2, lw=0.4, shrinkA=1, shrinkB=3))
-    ax.set_xlim(-135, 150); ax.set_ylim(-45, 68); ax.set_aspect("equal"); ax.axis("off")
+    # (a) the worked example of the Introduction: three stations at 8 am, tide alone and with circulation
+    ax = fig.add_subplot(r1[0]); ax.set_xlim(0, 2.45); ax.set_ylim(-0.14, 1.06); ax.set_aspect("equal"); ax.axis("off")
+    letter(ax, "a", x=0.0, y=0.98)
+    P3 = {"R": (0.16, 0.80), "M": (0.16, 0.14), "O": (0.86, 0.47)}
+    NM = {"R": "residential\nstreet", "M": "metro\nexit", "O": "offices"}
+    def three(dx, circ):
+        q = {k: (x + dx, y) for k, (x, y) in P3.items()}
+        yy, xx = np.mgrid[-0.1:1.05:140j, 0.45:1.12:100j]
+        ax.imshow(np.exp(-((xx - 0.86) ** 2 + (yy - 0.47) ** 2) / 0.04), extent=(dx + 0.45, dx + 1.12, -0.1, 1.05), origin="lower",
+                  cmap=LinearSegmentedColormap.from_list("pull", [SURF, "#c9d4e0", "#7290b0"]), alpha=0.6, zorder=0)
+        for a_, b_, w in (("R", "O", 2.4), ("M", "O", 1.5), ("R", "M", 0.8)):  # tide: width follows the difference in pull
+            ax.add_patch(FancyArrowPatch(q[a_], q[b_], arrowstyle="-|>,head_length=4,head_width=2.5", color=SLATE, lw=w,
+                                         shrinkA=9, shrinkB=9, connectionstyle="arc3,rad=0.12", zorder=2))
+        if circ:  # extra one-way travel from the metro exit to the offices, beyond the pull
+            ax.add_patch(FancyArrowPatch(q["M"], q["O"], arrowstyle="-|>,head_length=5,head_width=3", color=TERRA, lw=2.2,
+                                         shrinkA=9, shrinkB=9, connectionstyle="arc3,rad=-0.28", zorder=3))
+            ax.text(dx + 0.56, 0.17, "beyond\nthe pull", fontsize=6, color=TERRA, fontweight="bold", ha="left", va="top", linespacing=0.95)
+        for k, (x, y) in q.items():
+            ax.add_patch(Circle((x, y), 0.055, fc=SLATE if k == "O" else SURF, ec=SLATE, lw=1.1, zorder=4))
+            ax.text(x + (0.02 if k == "O" else -0.08), y + (0.11 if k == "O" else 0), NM[k], fontsize=6, color=INK,
+                    ha="center" if k == "O" else "right", va="bottom" if k == "O" else "center", linespacing=0.95, zorder=5)
+        ax.text(dx + 0.5, -0.1, "circulation: tide + one-way loop" if circ else "tide only", ha="center", va="top", fontsize=7,
+                color=TERRA if circ else SLATE, fontweight="bold")
+    three(0.12, False); three(1.3, True)
+    ax.text(1.21, 0.47, "8 am", fontsize=6.4, color=INK2, ha="center", va="center", style="italic")
 
     # (b) New York net flows
     draw_b(fig, r1[1], style)
@@ -176,27 +180,27 @@ def build(style, path):
     ax.text(-6.8, 0.2, "tide only", color=INK2, fontsize=6.4, va="top")
     ax.set_xlabel("triangle loop score z"); ax.set_ylabel("density"); clean(ax)
 
-    # (e) the idea
-    ax = fig.add_subplot(r3[0]); ax.set_xlim(-0.05, 2.35); ax.set_ylim(-0.2, 1.0); ax.set_aspect("equal"); ax.axis("off"); ax.set_anchor("W")
-    letter(ax, "e", x=0.0, y=0.98)
-    yy, xx = np.mgrid[0:1:150j, 0:1:150j]
-    ax.imshow(np.exp(-((xx - 0.68) ** 2 + (yy - 0.6) ** 2) / 0.06), extent=(0, 1, 0, 1), origin="lower", cmap=SEQ, alpha=0.55, zorder=0)
-    cen = (0.68, 0.6); ax.add_patch(Circle(cen, 0.045, fc=SLATE, ec=SLATE, zorder=3))
-    for p in [(0.15, 0.2), (0.2, 0.8), (0.45, 0.1)]:
-        ax.add_patch(Circle(p, 0.045, fc=SURF, ec=SLATE, lw=1.1, zorder=3))
-        ax.add_patch(FancyArrowPatch(p, cen, arrowstyle="-|>,head_length=4,head_width=2.5", color=SLATE, lw=1.3, shrinkA=6, shrinkB=7,
-                                     connectionstyle="arc3,rad=0.12", zorder=2))
-    ax.text(0.5, -0.07, "tide", ha="center", va="top", fontsize=7.5, color=SLATE, fontweight="bold")
-    ax.text(1.17, 0.5, "+", ha="center", va="center", fontsize=15, color=INK2)
-    tri = [(1.85, 0.88), (1.45, 0.22), (2.25, 0.22)]
-    for p in tri:
-        ax.add_patch(Circle(p, 0.05, fc=SURF, ec=TERRA, lw=1.2, zorder=3))
-    for i in range(3):
-        ax.add_patch(FancyArrowPatch(tri[i], tri[(i + 1) % 3], arrowstyle="-|>,head_length=5,head_width=3", color=TERRA, lw=1.8,
-                                     shrinkA=8, shrinkB=8, connectionstyle="arc3,rad=-0.25", zorder=2))
-        ax.add_patch(FancyArrowPatch(tri[(i + 1) % 3], tri[i], arrowstyle="-|>,head_length=3,head_width=2", color=MUTE, lw=0.7,
-                                     shrinkA=8, shrinkB=8, connectionstyle="arc3,rad=-0.12", zorder=1))
-    ax.text(1.85, -0.07, "circulation", ha="center", va="top", fontsize=7.5, color=TERRA, fontweight="bold")
+    # (e) scale
+    ax = fig.add_subplot(r3[0]); letter(ax, "e", x=0.0, y=0.98)
+    for p in read_polygons("data/raw/naturalearth/ne_110m_land.shp"):
+        ax.add_patch(Polygon(p, closed=True, fc=PALE, ec=GRID, lw=0.3))
+    # weekday trips between different stations, 06:00-22:00 (the analysed set, from the preprocessed counts)
+    sys_ = [("New York", -74.0, 40.7, 2.90e6, "bike", (-45, 22)), ("Boston", -71.1, 42.4, 0.27e6, "bike", (-48, 60)),
+            ("Chicago", -87.6, 41.9, 0.52e6, "bike", (-86, 63)), ("Mexico City", -99.1, 19.4, 1.09e6, "bike", (-92, 2)),
+            ("Buenos Aires", -58.4, -34.6, 0.16e6, "bike", (-90, -32)), ("London", -0.1, 51.5, 0.50e6, "bike", (-22, 59)),
+            ("Seoul", 127.0, 37.6, 1.84e6, "bike", (135, 49)), ("Taipei bike", 121.5, 25.0, 4.74e6, "bike", (140, 12)),
+            ("Taipei metro", 121.5, 25.0, 39.7e6, "metro", (140, -4)), ("SF bike", -122.4, 37.8, 0.23e6, "bike", (-118, 60)),
+            ("BART", -122.4, 37.8, 3.57e6, "metro", (-126, 18))]
+    for nm, lon, lat, n, kind, pos in sys_:
+        s = 14 + 60 * np.log10(n / 1e5)
+        if kind == "bike":
+            ax.scatter(lon, lat, s=s, color=TERRA, alpha=0.85, ec="white", lw=0.6, zorder=4)
+        else:
+            ax.scatter(lon, lat, s=s * 1.6, fc="none", ec=SAGE, lw=1.6, zorder=3)
+        lab = f"{nm}\n{n / 1e6:.1f}M" if n >= 1e6 else f"{nm}\n{n / 1e3:.0f}k"
+        ax.annotate(lab, (lon, lat), xytext=pos, textcoords="data", ha="center", va="center", fontsize=5.8, color=INK, linespacing=0.95,
+                    zorder=4, arrowprops=dict(arrowstyle="-", color=INK2, lw=0.4, shrinkA=1, shrinkB=3))
+    ax.set_xlim(-135, 150); ax.set_ylim(-45, 68); ax.set_aspect("equal"); ax.axis("off")
 
     # (f) the split, from 15 min to a day (corrected for the tide-only mixing artefact)
     cg = json.load(open("results/coarsegrain.json"))  # corrected for the tide-only simulation (results/coarsegrain.md)

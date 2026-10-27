@@ -1,9 +1,6 @@
-"""Fig 4 v3: streets steer circulation; operators do not pay for it. Same palette and conventions as src/fig1_v3.py.
-Panels: a Midtown Manhattan close-up (same-street one-way pairs over the street grid), b held-out legal-direction agreement,
-c robustness of the one-way result, d where operators rebalance (NYC station map), e-f rebalancing vs tide / circulation.
-Inputs: results/figdata_oneway_citibike_jun.npz (src/oneway.py DUMP_PAIRS=1), results/1_oneway_*.json,
-results/figdata_rebal_june2025.csv, data/processed/citibike_202605_weekday_trips.npz (station coordinates).
-Run from the project root: python3 src/fig4_v3.py  ->  results/figures/fig4_v3.pdf|png
+"""Supplementary Fig. 13: one-way streets. a Midtown Manhattan close-up (same-street one-way pairs over the street grid),
+b held-out legal-direction agreement. Input: results/figdata_oneway_citibike_jun.npz (src/oneway.py DUMP_PAIRS=1), results/1_oneway_*.json.
+Run from the repository root: python3 src/sfig13_oneway.py  ->  results/figures/sfig13_oneway.pdf|png
 """
 import csv
 import json
@@ -43,7 +40,10 @@ def letter(ax, s, x=-0.02, y=1.02):
     ax.text(x, y, s, transform=ax.transAxes, fontsize=10, fontweight="bold", color=INK, va="bottom", ha="right" if x < 0 else "left")
 
 
-fig = plt.figure(figsize=(7.4, 6.6))
+fig = plt.figure(figsize=(7.4, 3.9))
+G = fig.add_gridspec(1, 1)
+g1 = G[0].subgridspec(1, 2, width_ratios=[1.05, 1], wspace=0.28)
+
 G = fig.add_gridspec(2, 1, height_ratios=[1.15, 0.82], hspace=0.26)
 g1 = G[0].subgridspec(1, 2, width_ratios=[1.05, 1], wspace=0.28)
 g2 = G[1].subgridspec(1, 2, wspace=0.28)
@@ -105,35 +105,7 @@ ax.axvline(0.5, color=INK, lw=0.6, ls=(0, (3, 2)))
 ax.set_xlim(0, 1); ax.set_ylim(5.4, -0.6); ax.set_yticks([]); ax.spines["left"].set_visible(False)
 ax.set_xticks([0, 0.5, 1]); ax.set_xticklabels(["0", "50%", "100%"]); ax.set_xlabel("pairs favouring the legal direction (held out)"); clean(ax)
 
-# rebalancing data
-rows = list(csv.DictReader(open("results/figdata_rebal_june2025.csv")))
-V = np.array([float(r["V"]) for r in rows]); T = np.array([float(r["T"]) for r in rows]); L_ = np.array([float(r["Lam"]) for r in rows])
-RB = np.array([float(r["RB"]) for r in rows]); y = np.log1p(RB)
-s = stations("citibike")  # cached in results/ (src/figdata_io.py)
-nrm = lambda x: re.sub(r"\s+", " ", str(x).lower()).strip()
-cmap_ = {nrm(n): (a, b) for n, a, b in zip(s["station_name"], s["lat"].astype(float), s["lon"].astype(float))}
-ll = np.array([cmap_.get(nrm(r["st"]), (np.nan, np.nan)) for r in rows], float)
-
-# (c, d) component-plus-residual from the full model
-Zs = lambda a: (a - a.mean()) / a.std()
-X = np.c_[np.ones(len(y)), Zs(V), Zs(T), Zs(L_)]; b = np.linalg.lstsq(X, y, rcond=None)[0]; e = y - X @ b
-rb = J("results/4_rebalancing.json")
-for k_, (j, col, nm, lab) in enumerate(((2, SLATE, "tidal imbalance", "c"), (3, TERRA, "circulation intensity", "d"))):
-    ax = fig.add_subplot(g2[k_]); letter(ax, lab, x=-0.18)
-    # express the predictor in May-2025 standard deviations, as in the fitted model (src/rebalancing.py standardises June by
-    # May's mean and SD), so that the plotted slope equals the reported June coefficient; the fit itself is unchanged
-    bj = rb["fits"]["test"]["beta"][{2: "T", 3: "Lam"}[j]]; xs = X[:, j] * b[j] / bj; pr = e + bj * xs; keep = np.abs(xs) < 3.5
-    ax.hexbin(xs[keep], pr[keep], gridsize=20, cmap=LinearSegmentedColormap.from_list("m", [SURF, col]), mincnt=1, lw=0.2, edgecolors=SURF)
-    xx = np.linspace(-3, 3, 10); ax.plot(xx, bj * xx, color=INK, lw=1.4)
-    ax.set_xlabel(f"{nm} (May s.d.)"); ax.set_ylim(-1.3, 1.5); ax.set_box_aspect(0.78); ax.set_anchor("C"); clean(ax)
-    if k_ == 0:
-        ax.set_ylabel("operator moves\n(log, partial residual)")
-        ax.text(0.04, 0.96, "β = +0.17 [0.13, 0.22]", transform=ax.transAxes, fontsize=6.2, va="top", color=INK)
-    else:
-        ax.set_yticklabels([])
-        ax.text(0.04, 0.96, "β = −0.02 [−0.04, 0.01]\nΔR² = −0.0002", transform=ax.transAxes, fontsize=6.2, va="top", color=INK)
-print("partial slopes (June s.d.)", b[2], b[3], "plotted (May s.d.)", rb["fits"]["test"]["beta"]["T"], rb["fits"]["test"]["beta"]["Lam"], "| a: pairs in box", ni, "legal", nl)
-
+print("a: pairs in box", ni, "legal", nl)
 for ext in ("pdf", "png"):
-    fig.savefig(f"{OUT}/fig4_v3.{ext}", dpi=240, bbox_inches="tight")
-print("written fig4_v3")
+    fig.savefig(f"{OUT}/sfig13_oneway.{ext}", dpi=240, bbox_inches="tight")
+print("written sfig13_oneway")

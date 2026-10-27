@@ -50,46 +50,52 @@ add("1", "New York split-half correlation", f"ρ = {d['rho']:.2f}; permutation P
 cg = J("results/coarsegrain.json")
 add("1", "New York circulation share after subtracting the tide-only artefact, 15 min → whole day",
     f"{pct(cg['15min']['frac_corrected'], 0)} → {pct(cg['16h']['frac_corrected'], 0)}; simulation SD of the artefact ≤ {max(v['loop_sim_sd'] for v in cg.values()):.0f} deviance units (< 0.3% of the circulation component)", "3 simulations")
-# Results 2: h' per system
+# Results 1: h' per system
 NAME = {"citibike": "New York", "divvy_mj": "Chicago", "bluebikes": "Boston", "g_lon": "London", "g_seo": "Seoul", "g_mex": "Mexico City",
         "g_bue": "Buenos Aires", "g_baw": "SF Bay Area (Bay Wheels)", "tlc_2505": "NYC taxi and ride-hail (zones)", "g_ybk": "Taipei (YouBike)", "g_tpex": "Taipei Metro", "g_bar": "BART"}
 for u, v in U["bin15"].items():
-    add("3" if u == "tlc_2505" else "1–2", f"Median h′, 15-min bins: {NAME[u]}", jk(v["median_h"]) + f"; {v['median_h']['n_subsamples']} subsamples of {v['m_days']} of {v['n_days']} weekdays", "delete-d jackknife")
+    add("3" if u == "tlc_2505" else "1", f"Median h′, 15-min bins: {NAME[u]}", jk(v["median_h"]) + f"; {v['median_h']['n_subsamples']} subsamples of {v['m_days']} of {v['n_days']} weekdays", "delete-d jackknife")
 for u, v in U["bin60"].items():
-    add("2", f"Median h′, 60-min bins: {NAME[u]}", jk(v["median_h"], 3) + f"; {v['median_h']['n_subsamples']} subsamples of {v['m_days']} of {v['n_days']} weekdays", "delete-d jackknife")
+    add("1", f"Median h′, 60-min bins: {NAME[u]}", jk(v["median_h"], 3) + f"; {v['median_h']['n_subsamples']} subsamples of {v['m_days']} of {v['n_days']} weekdays", "delete-d jackknife")
 for c, v in U["within_city"].items():
-    add("2", f"{c}: bike minus rail, median h′", jk(v["diff_median_h"]) + f"; hourly intervals above zero in {v['hours_ci_above_zero']}/16, below in {v['hours_ci_below_zero']}/16", "delete-d jackknife, paired days")
-    k = v["hours_bike_gt_rail"]; add("2", f"{c}: hours with bike > rail", f"{k}/16; one-sided sign test P = {fp(stats.binom.sf(k - 1, 16, 0.5))} (hours treated as independent)", "sign test")
-    add("2", f"{c}: rail/bike tide per trip", jk(v["ratio_tide_per_trip_rail_over_bike"]), "delete-d jackknife, paired days")
-    add("2", f"{c}: bike/rail circulation per trip", jk(v["ratio_circ_per_trip"], 1), "delete-d jackknife, paired days")
-# Results 3
+    add("1", f"{c}: bike minus rail, median h′", jk(v["diff_median_h"]) + f"; hourly intervals above zero in {v['hours_ci_above_zero']}/16, below in {v['hours_ci_below_zero']}/16", "delete-d jackknife, paired days")
+    k = v["hours_bike_gt_rail"]; add("1", f"{c}: hours with bike > rail", f"{k}/16; one-sided sign test P = {fp(stats.binom.sf(k - 1, 16, 0.5))} (hours treated as independent)", "sign test")
+    add("1", f"{c}: rail/bike tide per trip", jk(v["ratio_tide_per_trip_rail_over_bike"]), "delete-d jackknife, paired days")
+    add("1", f"{c}: bike/rail circulation per trip", jk(v["ratio_circ_per_trip"], 1), "delete-d jackknife, paired days")
+# Results 2
 for f, nm in (("hab_citibike_jun", "New York"), ("hab_u_chi_jo25", "Chicago"), ("hab_u_bos_jo25", "Boston")):
     r = J(f"results/{f}.json")
-    add("3", f"Habit, {nm} (n = {r['n_pairs']:,} pairs)", f"β = {r['beta_R']:.2f}; top-decile share {pct(r['excess_share_top_decile'], 0)}, enrichment {r['enrichment_top_decile']:.2f}; P < 0.001", "permutation (2,000; floor 0.0005)")
+    add("2", f"Habit, {nm} (n = {r['n_pairs']:,} pairs)", f"β = {r['beta_R']:.2f}; top-decile share {pct(r['excess_share_top_decile'], 0)}, enrichment {r['enrichment_top_decile']:.2f}; P < 0.001", "permutation (2,000; floor 0.0005)")
 m = J("results/mode.json")
 for k, nm in (("M1_nyc_june", "New York"), ("M1_chi", "Chicago"), ("M1_bos", "Boston")):
-    r = m[k]; add("3", f"Transit-connected pairs, {nm}", f"β = {r['beta_T']:.3f}; enrichment {r['enrichment_T1']:.2f}; P < 0.001", "permutation (2,000)")
+    r = m[k]; add("2", f"Transit-connected pairs, {nm}", f"β = {r['beta_T']:.3f}; enrichment {r['enrichment_T1']:.2f}; P < 0.001", "permutation (2,000)")
 x = J("results/xfer_g_xj6.json")
-add("3", "Taipei transfer share, May → June 2023 (T1)", f"β = {x['beta_tau']:.3f}; enrichment {x['enrichment_top_decile']:.2f}; P < 0.001", "permutation (2,000)")
-add("3", "Taipei, transfer rides removed (T2)", "enrichment 1.43; P = 0.0035", "permutation (2,000)")
+add("2", "Taipei transfer share, May → June 2023 (T1)", f"β = {x['beta_tau']:.3f}; enrichment {x['enrichment_top_decile']:.2f}; P < 0.001", "permutation (2,000)")
+add("2", "Taipei, transfer rides removed (T2)", "enrichment 1.43; P = 0.0035", "permutation (2,000)")
 t3 = x["T3"]; k = round(t3["share_agree"] * t3["n"]); lo, hi = cp(k, t3["n"])
-add("3", "Taipei, direction agreement (T3)", f"{k} of {t3['n']:,} = {pct(k / t3['n'])} ({pct(lo)}–{pct(hi)}); P = {fp(t3['p'])}", "Clopper–Pearson; binomial")
-add("3", "Casual > member circulation, e-bikes, New York", f"31 of 31 months; two-sided sign test P = {fp(2 * 0.5 ** 31)}", "sign test")
+add("2", "Taipei, direction agreement (T3)", f"{k} of {t3['n']:,} = {pct(k / t3['n'])} ({pct(lo)}–{pct(hi)}); P = {fp(t3['p'])}", "Clopper–Pearson; binomial")
+add("2", "Casual > member circulation, e-bikes, New York", f"31 of 31 months; two-sided sign test P = {fp(2 * 0.5 ** 31)}", "sign test")
 h = J("results/hact.json")["primary"]
-add("3", "Land-use interactions, share of loop excess explained out of sample", f"{pct(h['dES'], 2)} ({pct(h['ci95'][0], 2)}–{pct(h['ci95'][1], 2)})", "as in section 6.1")
+add("2", "Land-use interactions, share of loop excess explained out of sample", f"{pct(h['dES'], 2)} ({pct(h['ci95'][0], 2)}–{pct(h['ci95'][1], 2)})", "as in section 6.1")
 # Results 4
 for f, nm in (("1_oneway_citibike_jun", "New York"), ("1_oneway_u_chi_jo25", "Chicago"), ("1_oneway_u_bos_jo25", "Boston")):
     r = J(f"results/{f}.json"); tw = r["two_way_control"]; k2 = round(tw["f_fixed_orientation"] * tw["n"]); lo2, hi2 = cp(k2, tw["n"])
-    add("4", f"One-way agreement, {nm}", f"{r['matches']} of {r['n_one_way_pairs']:,} = {pct(r['f'])} ({pct(r['ci95'][0])}–{pct(r['ci95'][1])}); one-sided P = {fp(r['p_one_sided'])}; two-way control {pct(tw['f_fixed_orientation'])} ({pct(lo2)}–{pct(hi2)}), n = {tw['n']}", "Clopper–Pearson; binomial (approximate)")
-lo, hi = cp(472, 506); add("4", "Midtown one-way pairs with the traffic", f"472 of 506 = {pct(472 / 506)} ({pct(lo)}–{pct(hi)})", "Clopper–Pearson (descriptive)")
+    add("2", f"One-way agreement, {nm}", f"{r['matches']} of {r['n_one_way_pairs']:,} = {pct(r['f'])} ({pct(r['ci95'][0])}–{pct(r['ci95'][1])}); one-sided P = {fp(r['p_one_sided'])}; two-way control {pct(tw['f_fixed_orientation'])} ({pct(lo2)}–{pct(hi2)}), n = {tw['n']}", "Clopper–Pearson; binomial (approximate)")
 e = J("results/devES.json")["real"]
-add("4", "Street direction, share of loop excess explained (all pairs)", f"{pct(e['ES_dev_june'])} ({pct(e['ci95'][0])}–{pct(e['ci95'][1])})", "day-block bootstrap (500)")
-add("4", "Street direction, pairs with ≥ 30 trips", f"{pct(J('results/devES_ge30.json')['ES_dev_ge30'])} (interval not computed)", "—")
+add("2", "Street direction, share of loop excess explained (all pairs)", f"{pct(e['ES_dev_june'])} ({pct(e['ci95'][0])}–{pct(e['ci95'][1])})", "day-block bootstrap (500)")
+add("2", "Street direction, pairs with ≥ 30 trips", f"{pct(J('results/devES_ge30.json')['ES_dev_ge30'])} (interval not computed)", "—")
 rb = J("results/4_rebalancing.json")["fits"]["test"]
 for k in rb["beta"]:
     ci = rb["ci"].get(k) if isinstance(rb["ci"], dict) else None
     add("4", f"Rebalancing, June 2025: β, {dict(V='trip volume', T='tidal imbalance', Lam='circulation intensity')[k]} (per SD)", f"{rb['beta'][k]:+.3f}" + (f" ({ci[0]:+.3f} to {ci[1]:+.3f})" if ci else " (interval not stored)"), "least squares")
 add("4", "Rebalancing: out-of-sample R² change from adding circulation", f"{J('results/4_rebalancing.json')['oos_r2_gain_lambda']:+.4f} (interval not computed)", "—")
+
+f = J("results/fare2024.json"); v = J("results/fare2024/validity.json")
+for k, nm in (("T1_enrichment", "circulation enrichment on transit-linked pairs"), ("S2_ride_share", "share of rides on transit-linked pairs")):
+    r = f[k]; add("4", f"Taipei fare change, ratio of changes 2024 vs 2023: {nm}", f"{r['ratio']:.3f} ({r['ratio_ci95'][0]:.3f} to {r['ratio_ci95'][1]:.3f}); P = {fp(r['p'])}; descriptive (calibration check failed)", "difference in differences; between-month variance, t (8 df)")
+rpd = {u: x["rides_06_22"] / x["weekdays"] for u, x in v["months"].items()}; mn = lambda us: np.mean([rpd[u] for u in us])
+g0 = mn(["g_f2303", "g_f2304", "g_f2305"]) / mn(["g_f2212", "g_f2301", "g_f2302"]) - 1; g1 = mn(["g_f2403", "g_f2404", "g_f2405"]) / mn(["g_f2312", "g_f2401", "g_f2402"]) - 1
+add("4", "Taipei rides per weekday, Dec–Feb to Mar–May", f"+{pct(g1, 0)} (2024) vs +{pct(g0, 0)} (2023); census of rides, no sampling interval", "—")
 
 for r in J("results/ampm/summary.json"):
     add("3", f"Morning–evening r*, {r['unit']}", f"{r['r_star']:.2f} ({r['ci95'][0]:.2f} to {r['ci95'][1]:.2f}); {r['verdict']}; partial given midday {r['partial_given_mid']:.2f} (exploratory)", "split-half disattenuated correlation; station bootstrap")
