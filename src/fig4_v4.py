@@ -71,10 +71,10 @@ for k_, (j, col, nm, lab) in enumerate(((2, SLATE, "tidal imbalance", "a"), (3, 
     ax.set_xlabel(f"{nm} (May s.d.)"); ax.set_ylim(-1.3, 1.5); ax.set_box_aspect(0.78); ax.set_anchor("C"); clean(ax)
     if k_ == 0:
         ax.set_ylabel("operator moves\n(log, partial residual)")
-        ax.text(0.04, 0.96, "β = +0.17 [0.13, 0.22]", transform=ax.transAxes, fontsize=6.2, va="top", color=INK)
+        ci_ = rb["fits"]["test"]["ci"]["T"]; ax.text(0.04, 0.96, f"β = {bj:+.3f} [{ci_[0]:.3f}, {ci_[1]:.3f}]".replace("-", "−"), transform=ax.transAxes, fontsize=6.2, va="top", color=INK)
     else:
         ax.set_yticklabels([])
-        ax.text(0.04, 0.96, "β = −0.02 [−0.04, 0.01]\nΔR² = −0.0002", transform=ax.transAxes, fontsize=6.2, va="top", color=INK)
+        ci_ = rb["fits"]["test"]["ci"]["Lam"]; ax.text(0.04, 0.96, (f"β = {bj:+.3f} [{ci_[0]:.3f}, {ci_[1]:.3f}]".replace("-", "−")) + "\nΔR² = −0.0002", transform=ax.transAxes, fontsize=6.2, va="top", color=INK)
 
 # (c) event study: monthly enrichment on transit-linked pairs, Dec-May, fare-change year against the year before
 fr = J("results/fare2024.json"); t1, s2 = fr["T1_enrichment"], fr["S2_ride_share"]

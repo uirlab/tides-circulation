@@ -4,8 +4,8 @@
 | 1 | Morning vs evening net inflow, 400 New York stations | r = −0.855 (95% CI −0.879 to −0.826) | Fisher z |
 | 1 | Triangle-hours with z beyond ±3, observed | 289 of 6,240 = 4.63% (4.12%–5.18%) | Clopper–Pearson |
 | 1 | Triangle-hours with z beyond ±3, tide-only model (5 draws) | 8 of 31,200 = 0.03% (0.01%–0.05%) | Clopper–Pearson |
-| 1 | Calibration, New York: No-loop check: false GO | 0/20 (0%–17%) | Clopper–Pearson |
-| 1 | Calibration, New York: Power check: GO at the observed strength | 20/20 (83%–100%) | Clopper–Pearson |
+| 1 | Calibration, New York: No-loop check: false detections | 0/20 (0%–17%) | Clopper–Pearson |
+| 1 | Calibration, New York: Power check: detections at the observed strength | 20/20 (83%–100%) | Clopper–Pearson |
 | 1 | Calibration, New York: Power near threshold (estimated h′ 0.10) | 4/20 (6%–44%) | Clopper–Pearson |
 | 1 | New York split-half correlation | ρ = 0.41; permutation P < 0.001 (1,000 permutations; floor 0.001) | permutation |
 | 1 | New York circulation share after subtracting the tide-only artefact, 15 min → whole day | 32% → 58%; simulation SD of the artefact ≤ 751 deviance units (< 0.3% of the circulation component) | 3 simulations |
@@ -53,18 +53,18 @@
 | 4 | Taipei fare change, ratio of changes 2024 vs 2023: circulation enrichment on transit-linked pairs | 0.978 (0.898 to 1.065); P = 0.56; descriptive (calibration check failed) | difference in differences; between-month variance, t (8 df) |
 | 4 | Taipei fare change, ratio of changes 2024 vs 2023: share of rides on transit-linked pairs | 0.893 (0.793 to 1.005); P = 0.057; descriptive (calibration check failed) | difference in differences; between-month variance, t (8 df) |
 | 4 | Taipei rides per weekday, Dec–Feb to Mar–May | +39% (2024) vs +24% (2023); census of rides, no sampling interval | — |
-| 3 | Morning–evening r*, New York | −0.09 (−0.14 to −0.04); ONE-WAY; partial given midday −0.36 (exploratory) | split-half disattenuated correlation; station bootstrap |
-| 3 | Morning–evening r*, Chicago | −0.53 (−0.62 to −0.44); MIRRORED; partial given midday −0.62 (exploratory) | split-half disattenuated correlation; station bootstrap |
-| 3 | Morning–evening r*, Boston | −0.49 (−0.60 to −0.36); MIXED; partial given midday −0.55 (exploratory) | split-half disattenuated correlation; station bootstrap |
-| 3 | Morning–evening r*, London | −0.78 (−0.89 to −0.67); MIRRORED; partial given midday −0.80 (exploratory) | split-half disattenuated correlation; station bootstrap |
-| 3 | Morning–evening r*, Seoul | −0.43 (−0.49 to −0.37); MIXED; partial given midday −0.45 (exploratory) | split-half disattenuated correlation; station bootstrap |
-| 3 | Morning–evening r*, Mexico City | −0.18 (−0.24 to −0.12); ONE-WAY; partial given midday −0.25 (exploratory) | split-half disattenuated correlation; station bootstrap |
-| 3 | Morning–evening r*, Buenos Aires | −0.58 (−0.70 to −0.45); MIRRORED; partial given midday −0.57 (exploratory) | split-half disattenuated correlation; station bootstrap |
-| 3 | Morning–evening r*, Bay Wheels | −0.62 (−0.72 to −0.52); MIRRORED; partial given midday −0.59 (exploratory) | split-half disattenuated correlation; station bootstrap |
-| 3 | Morning–evening r*, YouBike (60 min) | −0.36 (−0.38 to −0.33); MIXED; partial given midday −0.39 (exploratory) | split-half disattenuated correlation; station bootstrap |
-| 3 | Morning–evening r*, Taipei Metro (60 min) | −0.46 (−0.53 to −0.38); MIXED; partial given midday −0.54 (exploratory) | split-half disattenuated correlation; station bootstrap |
-| 3 | Morning–evening r*, BART (60 min) | −0.70 (−0.75 to −0.63); MIRRORED; partial given midday −0.70 (exploratory) | split-half disattenuated correlation; station bootstrap |
-| 3 | Morning–evening r*, NYC taxi (zones) | −0.31 (−0.35 to −0.28); MIXED; partial given midday −0.44 (exploratory) | split-half disattenuated correlation; station bootstrap |
+| 3 | Morning–evening r*, New York | −0.09 (−0.14 to −0.04); one-way; partial given midday −0.36 (exploratory) | split-half disattenuated correlation; station bootstrap |
+| 3 | Morning–evening r*, Chicago | −0.53 (−0.62 to −0.44); mirrored; partial given midday −0.62 (exploratory) | split-half disattenuated correlation; station bootstrap |
+| 3 | Morning–evening r*, Boston | −0.49 (−0.60 to −0.36); mixed; partial given midday −0.55 (exploratory) | split-half disattenuated correlation; station bootstrap |
+| 3 | Morning–evening r*, London | −0.78 (−0.89 to −0.67); mirrored; partial given midday −0.80 (exploratory) | split-half disattenuated correlation; station bootstrap |
+| 3 | Morning–evening r*, Seoul | −0.43 (−0.49 to −0.37); mixed; partial given midday −0.45 (exploratory) | split-half disattenuated correlation; station bootstrap |
+| 3 | Morning–evening r*, Mexico City | −0.18 (−0.24 to −0.12); one-way; partial given midday −0.25 (exploratory) | split-half disattenuated correlation; station bootstrap |
+| 3 | Morning–evening r*, Buenos Aires | −0.58 (−0.70 to −0.45); mirrored; partial given midday −0.57 (exploratory) | split-half disattenuated correlation; station bootstrap |
+| 3 | Morning–evening r*, Bay Wheels | −0.62 (−0.72 to −0.52); mirrored; partial given midday −0.59 (exploratory) | split-half disattenuated correlation; station bootstrap |
+| 3 | Morning–evening r*, YouBike (60 min) | −0.36 (−0.38 to −0.33); mixed; partial given midday −0.39 (exploratory) | split-half disattenuated correlation; station bootstrap |
+| 3 | Morning–evening r*, Taipei Metro (60 min) | −0.46 (−0.53 to −0.38); mixed; partial given midday −0.54 (exploratory) | split-half disattenuated correlation; station bootstrap |
+| 3 | Morning–evening r*, BART (60 min) | −0.70 (−0.75 to −0.63); mirrored; partial given midday −0.70 (exploratory) | split-half disattenuated correlation; station bootstrap |
+| 3 | Morning–evening r*, NYC taxi (zones) | −0.31 (−0.35 to −0.28); mixed; partial given midday −0.44 (exploratory) | split-half disattenuated correlation; station bootstrap |
 | 3 | Taipei transfer pairs minus other pairs, r* (May → June) | −0.02 (−0.12 to +0.09); transfer −0.36, other −0.35 | station bootstrap |
 | 3 | Taipei transfer pairs minus other pairs, r* (Mar → Apr) | +0.06 (−0.04 to +0.16); transfer −0.28, other −0.34 | station bootstrap |
 | 3 | Taipei transfer pairs minus other pairs, r* (Sep → Oct) | +0.04 (−0.07 to +0.16); transfer −0.35, other −0.39 | station bootstrap |

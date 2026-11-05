@@ -43,7 +43,7 @@ tri = np.load("results/figdata_motiv_triangles.npz")
 for k, lab in (("zr", "observed"), ("zn", "tide-only model (5 draws)")):
     x = tri[k]; c = int((np.abs(x) > 3).sum()); lo, hi = cp(c, x.size)
     add("1", f"Triangle-hours with z beyond ±3, {lab}", f"{c} of {x.size:,} = {pct(c / x.size, 2)} ({pct(lo, 2)}–{pct(hi, 2)})", "Clopper–Pearson")
-for lab, k, n in (("No-loop check: false GO", 0, 20), ("Power check: GO at the observed strength", 20, 20), ("Power near threshold (estimated h′ 0.10)", 4, 20)):
+for lab, k, n in (("No-loop check: false detections", 0, 20), ("Power check: detections at the observed strength", 20, 20), ("Power near threshold (estimated h′ 0.10)", 4, 20)):
     lo, hi = cp(k, n); add("1", f"Calibration, New York: {lab}", f"{k}/{n} ({pct(lo, 0)}–{pct(hi, 0)})", "Clopper–Pearson")
 d = J("results/0cb_strata_real.json")["decision"]
 add("1", "New York split-half correlation", f"ρ = {d['rho']:.2f}; permutation P < 0.001 (1,000 permutations; floor 0.001)", "permutation")
@@ -98,7 +98,7 @@ g0 = mn(["g_f2303", "g_f2304", "g_f2305"]) / mn(["g_f2212", "g_f2301", "g_f2302"
 add("4", "Taipei rides per weekday, Dec–Feb to Mar–May", f"+{pct(g1, 0)} (2024) vs +{pct(g0, 0)} (2023); census of rides, no sampling interval", "—")
 
 for r in J("results/ampm/summary.json"):
-    add("3", f"Morning–evening r*, {r['unit']}", f"{r['r_star']:.2f} ({r['ci95'][0]:.2f} to {r['ci95'][1]:.2f}); {r['verdict']}; partial given midday {r['partial_given_mid']:.2f} (exploratory)", "split-half disattenuated correlation; station bootstrap")
+    add("3", f"Morning–evening r*, {r['unit']}", f"{r['r_star']:.2f} ({r['ci95'][0]:.2f} to {r['ci95'][1]:.2f}); {r['verdict'].lower()}; partial given midday {r['partial_given_mid']:.2f} (exploratory)", "split-half disattenuated correlation; station bootstrap")
 for u, lab in (("g_xj6", "May → June"), ("g_x04", "Mar → Apr"), ("g_x10", "Sep → Oct"), ("g_x12", "Nov → Dec")):
     r = J(f"results/ampm/xfer_{u}_real.json")
     add("3", f"Taipei transfer pairs minus other pairs, r* ({lab})", f"{r['delta']:+.2f} ({r['ci_delta'][0]:+.2f} to {r['ci_delta'][1]:+.2f}); transfer {r['r_transfer']:.2f}, other {r['r_other']:.2f}", "station bootstrap")

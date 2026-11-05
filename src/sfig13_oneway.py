@@ -80,8 +80,8 @@ ax.add_patch(Rectangle((0.0, 0.0), 0.30, 0.085, transform=ax.transAxes, fc=SURF,
 ax.plot([BOX[0] + 0.002, BOX[0] + 0.002 + 1 / 111 / KX], [BOX[2] + 0.0015] * 2, color=INK2, lw=1.0, zorder=10, solid_capstyle="butt")
 ax.text(BOX[0] + 0.002, BOX[2] + 0.0025, "1 km", fontsize=5.6, color=INK2, zorder=10)
 bb = dict(fc=SURF, ec="none", alpha=0.92, pad=1.6)
-ax.text(0.98, 0.04, f"with the legal direction  {nl}", transform=ax.transAxes, ha="right", fontsize=6.2, color=TERRA, fontweight="bold", bbox=bb, zorder=10)
-ax.text(0.98, 0.10, f"against it  {ni - nl}", transform=ax.transAxes, ha="right", fontsize=6.2, color=INK, fontweight="bold", bbox=bb, zorder=10)
+ax.text(0.0, -0.10, f"with the legal direction  {nl}", transform=ax.transAxes, ha="left", clip_on=False, fontsize=6.2, color=TERRA, fontweight="bold", bbox=bb, zorder=10)
+ax.text(0.0, -0.17, f"against it  {ni - nl}", transform=ax.transAxes, ha="left", clip_on=False, fontsize=6.2, color=INK, fontweight="bold", bbox=bb, zorder=10)
 
 # (b) held-out agreement vs two-way controls
 ax = fig.add_subplot(g1[1]); letter(ax, "b", x=-0.22)

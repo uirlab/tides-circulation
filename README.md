@@ -17,7 +17,7 @@ All figures and Supplementary Table S8 can be rebuilt from the derived results i
 ```bash
 conda env create -f environment.yml && conda activate tides-circulation   # or: pip install -r requirements.txt
 make test      # synthetic checks of the estimator (seconds)
-make figures   # Figs. 1-4 and Supplementary Figs. 1-12 -> results/figures/
+make figures   # Figs. 1-4 and Supplementary Figs. 1-14 -> results/figures/
 make tables    # Supplementary Table S8 -> results/tables/table_s8.md
 ```
 
@@ -76,6 +76,11 @@ The `hpc/` folder holds the job scripts used for each step, with the cluster-spe
 | Supplementary Fig. 14 | `src/sfig14_taxi.py` | `sfig14_taxi.png` |
 | Supplementary Table S8 | `src/table_s8.py` | `results/tables/table_s8.md` |
 | Supplementary Tables S1–S7 | assembled from the result files named in each table's source line | — |
+
+## Authorship of the code
+
+The authors developed the analyses. Claude (Anthropic), an AI assistant, helped organise and clean the code for
+this public release.
 
 ## Data and licences
 
