@@ -79,8 +79,9 @@ The `hpc/` folder holds the job scripts used for each step, with the cluster-spe
 
 ## Authorship of the code
 
-The authors developed the analyses. Claude (Anthropic), an AI assistant, helped organise and clean the code for
-this public release.
+The authors designed the study and developed the analyses. Claude (Anthropic), a large language model, assisted
+with developing part of the analysis code. The authors checked every analysis and result and take full responsibility
+for the code.
 
 ## Data and licences
 
